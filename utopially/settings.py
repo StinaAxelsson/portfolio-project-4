@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['utopially-community.herokuapp.com']
+ALLOWED_HOSTS = ['utopially-community.herokuapp.com', 'localhost']
 
 
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'splashpage',
     'home',
 ]
