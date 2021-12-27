@@ -33,8 +33,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['utopially-community.herokuapp.com', 'localhost']
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'splashpage',
     'home',
 ]
 
