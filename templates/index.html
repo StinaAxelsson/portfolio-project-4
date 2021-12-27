@@ -4,7 +4,6 @@
 
 <div class="container-fluid">
     <div class="row">
-        <h1>FEED</h1>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -12,16 +11,13 @@
                 <div class="col-md-6 mx-auto">
                     <div class="card mb-6 mx-auto">
                         <div class="card-body">
+                            <div class="card-header">{{ post.username }}</div>
                             <div class="image-container">
-                                {% if "placeholder" in post.shared_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
                                 <img class="card-img-top" src="{{ post.shared_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p>{{ post.username }}</p>
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
                                     <p class="card-text">{{ post.content }}</p>
+                                    <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
                                 </div>
                             </div>
                         </div>

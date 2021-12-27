@@ -34,20 +34,20 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Profile</a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fas fa-user-circle"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Search</a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fas fa-search"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Messages</a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fas fa-envelope"></i></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
