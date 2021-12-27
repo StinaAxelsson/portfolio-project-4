@@ -24,15 +24,15 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="nav-tabs">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">Utopi'Ally</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <div class="justify-content-center">
+                <ul class="nav justify-content-end">
+                    <a aria-current="page" href="#">
+                    <button class="btn btn-outline-success me-2" type="button">Upload</button>
+                    </a>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
                     </li>
