@@ -4,13 +4,13 @@
 
 <div class="container-fluid">
     <div class="row">
-
+        <h1>FEED</h1>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-md-6 mx-auto">
+                    <div class="card mb-6 mx-auto">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.shared_image.url %}
@@ -20,14 +20,10 @@
                                 <img class="card-img-top" src="{{ post.shared_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">{{ post.username }}</p>
+                                    <p>{{ post.username }}</p>
+                                    <p class="card-text">{{ post.content }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.username }}</h2>
-                                <p class="card-text">{{ post.content }}</p>
-                            </a>
-                            <hr />
                         </div>
                       </div> 
                      </div>    
