@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left feed-background">
+        <!-- Feed with uploadet Posts -->
+        <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-6 mx-auto">
@@ -18,6 +17,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"></h5>
                                     <p class="card-text">{{ post.content }}</p>
+                                    <p class="card-text"><i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                                     <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
                                 </div>
                             </div>
