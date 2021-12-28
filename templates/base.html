@@ -32,14 +32,14 @@
                     <img src="{% static 'headerimage.png' %}" alt="headerlogo" width="150" height="120">
                 </a>
                 <ul class="nav justify-content-end">
-                    
+                    {% if user.is_authenticated %}
+                    <p>Welcome!  {{ post.username }}</p>
                     <a aria-current="page" href="#">
                     <button class="btn btn-outline-success me-2" type="button">Upload</button>
                     </a>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
                     </li>
-                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#"><i class="fas fa-user-circle"></i></a>
                     </li>
@@ -54,10 +54,13 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
 

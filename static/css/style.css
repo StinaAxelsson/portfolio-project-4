@@ -1,8 +1,8 @@
-#home-background{
-    background-image: url("/static/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 600vh;
-    
+.card-header{
+    border-bottom: 1px solid gray;
+    background-color: white;
 }
 
+.nav-link{
+    color: rgb(138, 39, 115);
+}
