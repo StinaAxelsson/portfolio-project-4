@@ -47,11 +47,11 @@
                         <a class="nav-link" aria-current="page" href="#"><i class="fas fa-envelope"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
+                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><i class="fas fa-home"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -87,8 +87,8 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Stina Axelsson</p>
-        <p class="m-0 text-center text-white">Follow: <i class="fab fa-facebook-square ms-3"></i>
+        <p class="m-0 text-center text-black">Made by Stina Axelsson</p>
+        <p class="m-0 text-center text-black">Follow: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
