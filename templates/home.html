@@ -6,10 +6,16 @@
     <div class="row">
         <div class="col-12 mt-3 left">
             <h2 class="welcome">Welcome {{ user.username }}!</h2>
+            <h4>Upload</h4>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <div class="d-grid gap-2">
+                    <button class="btn btn-success mt-3">Submit!</button>
+                </div>
+            </form>
         </div>
-
     </div>
-
 </div>
 <div class="container-fluid">
     <div class="row">
