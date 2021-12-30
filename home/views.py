@@ -4,6 +4,7 @@ from .models import Post
 
 
 class PostListView(View):
+
     def get(self, request, *args, **kwargs):
         posts = Post.objects.all().order_by('-created_on')
 
