@@ -36,27 +36,31 @@ ALLOWED_HOSTS = ['utopially-community.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'splashpage',
+    'home',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'splashpage',
-    'home',
+    'crispy_forms',
 ]
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'index'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

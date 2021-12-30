@@ -28,14 +28,13 @@
         <div class="container-fluid">
 
             <div class="justify-content-center">
-                <a class="navbar-brand" href="{% url 'home' %}">
+                <a class="navbar-brand" href="{% url 'index' %}">
                     <img src="{% static 'headerimage.png' %}" alt="headerlogo" width="150" height="120">
                 </a>
                 <ul class="nav justify-content-end">
                     {% if user.is_authenticated %}
-
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><i class="fas fa-home"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#"><i class="fas fa-user-circle"></i></a>
