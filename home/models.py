@@ -19,4 +19,3 @@ class Post(models.Model):
     likes = models.ManyToManyField(
         User, related_name='post_like', blank=True
         )
-

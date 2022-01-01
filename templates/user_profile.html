@@ -2,6 +2,22 @@
 
 {% block content %}
 
-<h1>Hello</h1>
+<h1>Hello {{ user.first_name }}</h1>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Feed with uploadet Posts -->
+        <div class="col-12 mt-3 left">
+            <div class="container">
+                <img class="account-img" src="{{ user.image.url }}">
+            </div>
+            <div class="media-body">
+            <h2>{{ user.username }}</h2>
+            <p>{{ user.first_name }}</p>
+            <p>{{ user.last_name }}</p>
+            <p>{{ user.bio }}</p>
+        </div>
+        </div>
+    </div>
+</div>
 
 {%endblock%}

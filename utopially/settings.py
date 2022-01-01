@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['utopially-community.herokuapp.com', 'localhost']
 INSTALLED_APPS = [
     'splashpage',
     'home',
+    'users',
 
     'django.contrib.admin',
     'django.contrib.auth',
