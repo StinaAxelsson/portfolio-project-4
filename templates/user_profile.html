@@ -2,21 +2,24 @@
 
 {% block content %}
 
-<h1>Hello {{ user.first_name }}</h1>
+<h1>PROFILE: {{ user.username }}</h1>
 <div class="container-fluid">
     <div class="row">
+        {% for x in profile %}
         <!-- Feed with uploadet Posts -->
         <div class="col-12 mt-3 left">
+            
             <div class="container">
-                <img class="account-img" src="{{ user.image.url }}">
+                <img class="account-img" src="{{ x.image.url }}">
             </div>
             <div class="media-body">
-            <h2>{{ user.username }}</h2>
-            <p>{{ user.first_name }}</p>
-            <p>{{ user.last_name }}</p>
-            <p>{{ user.bio }}</p>
+            <h2>{{ x.username }}</h2>
+            <p>{{ x.first_name }}</p>
+            <p>{{ x.last_name }}</p>
+            <p>{{ x.bio }}</p>
         </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
