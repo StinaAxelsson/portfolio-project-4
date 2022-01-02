@@ -11,7 +11,7 @@ class PostListView(View):
         form = PostUpload()
 
         context = {
-            'home': posts,
+            'posts': posts,
             'form': form,
             
         }

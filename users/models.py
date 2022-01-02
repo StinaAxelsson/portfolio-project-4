@@ -7,8 +7,11 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE
         )
-    image = CloudinaryField('image', blank=True)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    picture = CloudinaryField('image', default='placeholder')
+    first_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
     birth_date = models.DateField()
-    bio = models.TextField(max_length=500)
+    bio = models.TextField(max_length=500, blank=True)
+
+    def __str__(self):
+        return f'{self.user.username} Profile'

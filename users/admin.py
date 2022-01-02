@@ -7,6 +7,6 @@ from django_summernote.admin import SummernoteModelAdmin
 class ProfileAdmin(SummernoteModelAdmin):
 
     list_display = (
-        'user', 'image', 'first_name', 'last_name', 'birth_date', 'bio'
+        'user', 'picture', 'first_name', 'last_name', 'birth_date', 'bio'
         )
     summernote_fields = ('bio')

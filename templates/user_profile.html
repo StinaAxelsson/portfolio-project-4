@@ -5,21 +5,19 @@
 <h1>PROFILE: {{ user.username }}</h1>
 <div class="container-fluid">
     <div class="row">
-        {% for x in profile %}
         <!-- Feed with uploadet Posts -->
         <div class="col-12 mt-3 left">
             
             <div class="container">
-                <img class="account-img" src="{{ x.image.url }}">
+                <img class="account-img" src="{{ profile.picture.url }}">
             </div>
             <div class="media-body">
-            <h2>{{ x.username }}</h2>
-            <p>{{ x.first_name }}</p>
-            <p>{{ x.last_name }}</p>
-            <p>{{ x.bio }}</p>
+            <p>{{ profile.first_name }}</p>
+            
+            <p>{{ profile.last_name }}</p>
+            <p>{{ profile.bio }}</p>
         </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 

@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .models import Profile
-
 
 
 class ProfileView(View):
@@ -10,8 +9,9 @@ class ProfileView(View):
         user = Profile.objects.all()
 
         context = {
-            'profile': user,
+            
+            'user': user,
 
         }
-
+      
         return render(request, 'user_profile.html', context)
