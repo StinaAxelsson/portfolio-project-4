@@ -36,9 +36,9 @@ ALLOWED_HOSTS = ['utopially-community.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'splashpage',
-    'home',
-    'users',
+
+    'landing_page',
+    'socialnetwork',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
 
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -54,14 +55,12 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'django_summernote',
-    'crispy_forms',
 ]
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'index'
+# LOGIN_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'index'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,6 +73,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'utopially.urls'
+CRISPY_TEMPLATES_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
