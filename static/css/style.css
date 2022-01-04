@@ -1,12 +1,4 @@
-.card-header{
-    border-bottom: 1px solid gray;
-    background-color: white;
-}
-
-.nav-link{
-    color: rgb(138, 39, 115);
-}
-
-.welcome{
-    text-align: center;
+.logo-img{
+    width: 50%;
+    height: auto;
 }
