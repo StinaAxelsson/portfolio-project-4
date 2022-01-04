@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center mt-3">
         <div class="col-12 mt-3 left">
-            <h2 class="welcome">Welcome {{ user.username }}!</h2>
-            <h4>Upload</h4>
-            <form method="POST">
-                {% csrf_token %}
-                {{ form }}
-                <div class="d-grid gap-2">
-                    <button class="btn btn-success mt-3">Submit!</button>
+            <div class="row justify-content-center">
+                {% for post in post_feed %}
+                <div class="col-md-6 mx-auto">
+                    <div class="card mb-6 mx-auto">
+                        <div class="card-body">
+                            <p class="card-header header-bg">{{ post.author }} <small class="text-muted">{{ post.created_on }}</small></p>
+                            <p>{{ post.body }}</p>
+                        </div>
+                    </div>
                 </div>
-            </form>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
-<div class="container-fluid">
+
+<!--<div class="container-fluid">
     <div class="row">
-        <!-- Feed with uploadet Posts -->
+         Feed with uploadet Posts 
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in home %}
@@ -61,5 +66,5 @@
         </ul>
     </nav>
     {% endif %}
-</div>
+</div>-->
 {%endblock%}
