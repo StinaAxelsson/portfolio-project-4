@@ -32,3 +32,15 @@ class PostListView(View):
         }
 
         return render(request, 'post_feed.html', context)
+
+
+class PostDetail(View):
+
+    def get(self, request, pk, *args, **kwargs):
+        post = Post.objects.get(pk=pk)
+
+        context = {
+            'post': post
+        }
+
+        return render(request, 'post_detail.html', context)

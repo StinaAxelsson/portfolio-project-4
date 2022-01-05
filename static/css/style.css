@@ -13,3 +13,12 @@
 .btn-color:hover{
     background-color: #A4EAC0;
 }
+
+.icon:hover{
+    font-size: 16px;
+    color: #F7BAF0;
+}
+
+.big-icon{
+    background: linear-gradient(90deg, rgba(166,191,255,1) 1%, rgba(164,234,192,1) 99%);
+}
