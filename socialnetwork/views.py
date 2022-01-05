@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 
 
 class PostListView(View):
@@ -38,9 +38,11 @@ class PostDetail(View):
 
     def get(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
+        form = CommentForm()
 
         context = {
-            'post': post
+            'post': post,
+            'form': form,
         }
 
         return render(request, 'post_detail.html', context)
