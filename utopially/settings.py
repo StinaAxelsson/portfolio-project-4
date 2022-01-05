@@ -67,7 +67,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'post_feed'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -5,9 +5,25 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center mt-3">
-        <div class="col-12 mt-3 left">
+        <div class="col-md-5 col-sm-12 border-bottom">
+            <h4  class="text-center display-5"><i class="far fa-plus-square"></i> Username</h4>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3 m-5">
+        <div class="col-md-5 col-sm-12 border-bottom">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="d-grid gap-2">
+                    <button class="btn btn-color mt-3">Upload!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+            {% for post in post_feed %}
             <div class="row justify-content-center">
-                {% for post in post_feed %}
                 <div class="col-md-6 mx-auto">
                     <div class="card mb-6 mx-auto">
                         <div class="card-body">
@@ -16,8 +32,8 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
