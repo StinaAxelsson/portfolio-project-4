@@ -4,13 +4,14 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 
 """
 Views for the feed, listing all existing posts that been created,
 and a form to create new posts for the feed.
 """
-class PostList(View):
+class PostList(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         posts = Post.objects.all().order_by('-created_on')
         form = PostForm()
@@ -45,7 +46,7 @@ Views for the posts detail, when user click on a post in the feed,
 they see the post on its own and can comment, edit and delete comments,
 or edit and delete the post if its created by the user.
 """
-class PostDetail(View):
+class PostDetail(LoginRequiredMixin, View):
 
     def get(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
@@ -86,7 +87,7 @@ class PostDetail(View):
 Views for edit a uploaded post, and using get_successs_url to rederict back
 to the post detail template when user has submit the edit.
 """
-class PostEdit(UpdateView):
+class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['body']
     template_name = 'post_edit.html'
@@ -95,11 +96,35 @@ class PostEdit(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy('post_detail', kwargs={'pk':pk})
 
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
 
 """
-Views for Delete a uploaded post from the feed.
+Views for Delete a uploaded (by user) post from the feed.
 """
-class PostDelete(DeleteView):
+class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('post_feed')
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+
+"""
+Views for Delete a uploaded (by user) comment from the feed.
+"""
+class CommentDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    template_name = 'comment_delete.html'
+
+    def get_success_url(self):
+        pk = self.kwargs['post_pk']
+        return reverse_lazy('post_detail', kwargs={'pk':pk})
+        
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
