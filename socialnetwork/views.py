@@ -59,7 +59,10 @@ class PostDetail(View):
         }
 
         return render(request, 'post_detail.html', context)
-
+        
+    """
+    Add a new comment to the post
+    """
     def post(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
         form = CommentForm(request.POST)
