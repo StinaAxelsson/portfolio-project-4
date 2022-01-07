@@ -52,7 +52,7 @@ class PostDetail(LoginRequiredMixin, View):
         post = Post.objects.get(pk=pk)
         form = CommentForm()
         comments = Comment.objects.filter(post=post).order_by('-created_on')
-
+    
         context = {
             'post': post,
             'form': form,
