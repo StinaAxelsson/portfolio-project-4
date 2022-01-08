@@ -8,37 +8,38 @@
           <h4  class="text-center rubrics"><i class="far fa-user big-icon"></i>Profile @{{ user.username }}</h4>
       </div>
   </div>
-  <div class="row justify-content-center mt-3 m-5">
-      <div class="card shadow-sm  col-md-8 col-sm-12 border-bottom">
-        {% if "placeholder" in profile.picture.url %}
-        <img src="{% static 'default_profile.png' %}" width="100" heigh="100"/>
-        {% else %}
-        <img src="{{ profile.picture.url }}" class="rounded-circle m-3" width="100" heigh="100"/>
-        {% endif %}
-
-        {% if profile.name %}
-        <p class="m-2"><strong>Name: </strong>{{ profile.name }}</p>
-        {% endif %}
-
-        {% if profile.location %}
-        <p class="m-2"><strong>Location: </strong>{{ profile.location }}</p>
-        {% endif %}
-
-        {% if profile.birthday %}
-        <p class="m-2"><strong>Birthday: </strong>{{ profile.birthday }}</p>
-        {% endif %}
-
-        {% if profile.gender %}
-        <p class="m-2"><strong>Gender: </strong>{{ profile.gender }}</p>
-        {% endif %}
-
-        {% if profile.bio %}
-        <p class="m-2">{{ profile.bio }}</p>
-        {% endif %}
-      </div>
-  </div>
 </div>
 
+<div class="row justify-content-center mt-3 m-5">
+    <div class="card shadow-sm  col-md-8 col-sm-12 border-bottom">
+      {% if "placeholder" in profile.picture.url %}
+      <img src="{% static 'default_profile.png' %}" width="100" heigh="100"/>
+      {% else %}
+      <img src="{{ profile.picture.url }}" class="m-3" width="100" heigh="100"/>
+      {% endif %}
+
+      {% if profile.name %}
+      <p class="m-2"><strong>Name: </strong>{{ profile.name }}</p>
+      {% endif %}
+
+      {% if profile.location %}
+      <p class="m-2"><strong>Location: </strong>{{ profile.location }}</p>
+      {% endif %}
+
+      {% if profile.birthday %}
+      <p class="m-2"><strong>Birthday: </strong>{{ profile.birthday }}</p>
+      {% endif %}
+
+      {% if profile.gender %}
+      <p class="m-2"><strong>Gender: </strong>{{ profile.gender }}</p>
+      {% endif %}
+
+      {% if profile.bio %}
+      <p class="m-2">{{ profile.bio }}</p>
+      {% endif %}
+    </div>
+</div>
+</div>
           {% for post in posts %}
           <div class="row justify-content-center">
               <div class="col-md-6 mx-auto">
