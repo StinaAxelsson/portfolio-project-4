@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .models import Post, Comment
+from .models import Post, Comment, Users
 from .forms import PostForm, CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -128,3 +128,17 @@ class CommentDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         post = self.get_object()
         return self.request.user == post.author
+
+class UserProfile(View):
+    def get(self, request, pk, *args, **kwargs):
+        profile = Users.objects.get(pk=pk)
+        user = profile.user
+        posts = Post.objects.filter(author=user).order_by('-created_on')
+
+        context = {
+            'user': user,
+            'profile': profile,
+            'posts': posts
+        }
+
+        return render(request, 'user_profile.html', context)
