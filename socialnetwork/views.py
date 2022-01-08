@@ -123,7 +123,7 @@ class CommentDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         pk = self.kwargs['post_pk']
-        return reverse_lazy('post_detail', kwargs={'pk':pk})
+        return reverse_lazy('post_detail', kwargs={'pk': pk})
         
     def test_func(self):
         post = self.get_object()
@@ -142,3 +142,17 @@ class UserProfile(View):
         }
 
         return render(request, 'user_profile.html', context)
+
+
+class UserProfileEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Users
+    fields = ['picture', 'name', 'location', 'birthday', 'gender', 'bio']
+    template_name = 'profile_edit.html'
+
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy('profile', kwargs={'pk': pk})
+
+    def test_func(self):
+        profile = self.get_object()
+        return self.request.user == profile.user
