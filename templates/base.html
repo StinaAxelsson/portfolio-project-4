@@ -18,7 +18,7 @@
   </head>
   <body>
     {% block body %}
-    <nav class="navbar navbar-expand-lg navbar-light nav-color">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light nav-color">
       <div class="container-fluid">
         <a class="navbar-brand nav-font" title="Start"
         {% if user.is_authenticated %}
@@ -40,14 +40,17 @@
             <a class="nav-link" title="Search users" href="#"><i class="fas fa-search icon"></i></a>
             </li>
             <li class="nav-item">
-             <a class="nav-link" title="Profile page" href="{% url 'profile' user.profile.pk %}"><i class="far fa-user icon"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" title="Messages" href="#"><i class="far fa-envelope icon"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link icon" title="Logout" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt icon"></i></a>
+              <a class="nav-link" title="Messages" href="#"><i class="far fa-envelope icon"></i></a>
           </li>
+            <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" title="Account" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="far fa-user icon"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" title="Profile-page" href="{% url 'profile' user.profile.pk %}">Profile</a>
+                <a class="dropdown-item" title="Logout" href="{% url 'account_logout' %}">Logout</a>
+              </div>
+            </li>
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
@@ -84,7 +87,9 @@
    
 
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

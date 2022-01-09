@@ -7,7 +7,8 @@
     <div class="row justify-content-center mt-3">
         <div class="col-md-5 col-sm-12 border-bottom">
             <h4  class="text-center rubrics"><i class="far fa-plus-square big-icon"></i>Feed</h4>
-            <h5 class="text-center">Logged in as @{{ user.username }}</h5>
+            <h5 class="text-center">Logged in as @{{ user.username }}
+            </h5>
         </div>
     </div>
     <div class="row justify-content-center mt-3 m-5">
@@ -33,6 +34,12 @@
                                     <a href="{% url 'post_edit' post.pk %}"><i class="far fa-edit"></i></a>
                                     <a href="{% url 'post_delete' post.pk %}"><i class="far fa-trash-alt"></i></a>
                                 {% endif %}</p>
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img class="card-img-top" src="{{ post.upload.url }}">
+                                {% endif %}
                             <p class="p-body-font">{{ post.body }}</p>
                             <p><i class="far fa-heart"></i> 
                                 <i class="far fa-sad-tear"></i> 
