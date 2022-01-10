@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from .models import Post, Comment
 
 
@@ -10,7 +11,8 @@ class PostForm(forms.ModelForm):
             'placeholder': 'Whats on your mind today?...'
         })
     )
-
+    
+    upload = forms.ImageField(required=False)
     class Meta:
         model = Post
         fields = ['body', 'upload']

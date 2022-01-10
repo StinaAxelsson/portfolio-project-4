@@ -46,6 +46,13 @@
     font-size: 45px;
 }
 
+.upload-images{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
 /*-----------------------Post-detail-----------*/
 
 textarea{
