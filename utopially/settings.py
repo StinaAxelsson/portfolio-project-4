@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'landing_page',
     'socialnetwork',
+    'followsystem',
 
     'django.contrib.admin',
     'django.contrib.auth',

@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('landing_page.urls')),
     path('accounts/', include('allauth.urls')),
     path('socialnetwork/', include('socialnetwork.urls')),
+    path('followsystem/', include('followsystem.urls')),
 ]
 
 if settings.DEBUG:
