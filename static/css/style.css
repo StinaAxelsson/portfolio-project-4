@@ -65,3 +65,23 @@
 textarea{
     width: 100%;
 }
+
+/*----------------------Profile----------------*/
+
+.follow-btn{
+    background-color: #A4EAC0;
+    border-radius: 10px;
+    font-family: 'Handlee';
+}
+
+.unfollow-btn{
+    background-color: #A6BFFF;
+    border-radius: 10px;
+    font-family: 'Handlee';
+}
+
+.profile-image{
+    width: 100px;
+    height: 100px;
+    border: ;
+}
