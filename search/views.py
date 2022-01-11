@@ -6,15 +6,12 @@ from socialnetwork.models import Users
 
 class Search(View):
     def get(self, request, *args, **kwargs):
-        query = self.request.GET.get('query')
-        search_result = Users.objects.filter(
+        query = self.request.GET.get('query', None)
+        if not query:
+            query = ""
+
+        results = Users.objects.filter(
             Q(user__username__icontains=query)
         )
-        if not query:
-            search_result = ""
 
-        context = {
-            'search_result': search_result,
-        }
-
-        return render(request, 'search_users.html', context)
+        return render(request, 'search_users.html', {'results': results})
