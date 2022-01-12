@@ -46,6 +46,18 @@
     font-size: 45px;
 }
 
+.feed-username{
+    text-decoration: none;
+    font-family: 'Handlee';
+    color: black;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.feed-username:hover{
+    color: #A4EAC0;
+}
+
 .upload-images{
     max-width: 100%;
     height: auto;
@@ -81,7 +93,24 @@ textarea{
 }
 
 .profile-image{
-    width: 100px;
-    height: 100px;
-    border: ;
+    width: 190px;
+    height: 200px;
+}
+
+/*-------------------------------Search results-----*/
+
+.search-result{
+    
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.search-result a{
+    text-decoration: none;
+    color: black;
+}
+
+.search-result:hover{
+    border-bottom: black 1px solid;
 }
