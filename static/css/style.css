@@ -37,7 +37,7 @@
     color: #F7BAF0;
 }
 
-.big-icon{
+.big-icon i{
     background: linear-gradient(90deg, rgba(166,191,255,1) 1%, rgba(164,234,192,1) 99%);
 }
 
@@ -131,4 +131,14 @@ textarea{
 
 .search-result:hover{
     border-bottom: black 1px solid;
+}
+
+/*--------------------------Footer--------*/
+
+.footer-copy{
+    background: linear-gradient(90deg, rgba(166,191,255,1) 1%, rgba(164,234,192,1) 99%);
+}
+
+.footer-social-bg{
+    background: rgb(165 220 213);
 }

@@ -37,12 +37,12 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" title="Account" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
-                {% if "placeholder" in user.profile.picture.url %}
+                {% if "placeholder" in request.user.profile.picture.url %}
                 <img class="rounded-circle"  width="30" heigh="30" src="{% static 'image/default_profile.png' %}"/>
                 {% else %}
-                <img class="rounded-circle"  height="30" width="30" src="{{ user.profile.picture.url }}" /> 
+                <img class="rounded-circle"  height="30" width="30" src="{{ request.user.profile.picture.url }}" /> 
                 {% endif %}
-                {{ user.username }}
+                {{ request.user.username }}
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                  <a class="dropdown-item" title="Profile-page" href="{% url 'profile' user.profile.pk %}">Profile</a>
@@ -92,8 +92,35 @@
     </div>
     {% endif %} -->
     <div class="mt-5">
+
+  <main class="flex-shrink-0 main-bg"> 
+
     {% block content %}
     {% endblock %}
+  </main>
+  <footer class="text-center text-white footer-social-bg mt-3">
+    <div class="container pt-4">
+      <section class="mb-4">
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button" data-mdb-ripple-color="dark">
+          <i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button" data-mdb-ripple-color="dark">
+          <i class="fab fa-instagram"></i></a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button">
+          <i class="fab fa-linkedin"></i></a>
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+    </div>
+    <div class="text-center p-1 footer-copy">
+      © 2022 Copyright:
+      <p class="text-dark">Stina Carolin Axelsson</p>
+    </div>
+
     {% endblock %}
    
 
