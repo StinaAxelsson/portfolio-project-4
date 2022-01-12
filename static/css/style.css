@@ -93,13 +93,31 @@ textarea{
 }
 
 .profile-image{
-    width: 190px;
-    height: 200px;
+    width: 15rem;
+    height: 15rem;
+}
+
+.moon-friends{
+    text-align: center;
+    font-family: 'Handlee';
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.bio{
+    text-align: center;
+}
+
+.bio-username{
+    text-align: center;
+    font-family: 'Handlee';
+    font-weight: bold;
 }
 
 /*-------------------------------Search results-----*/
 
-.search-result{
+.search-result, 
+.bio-text{
     
     font-size: 20px;
     text-align: center;
