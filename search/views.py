@@ -14,5 +14,3 @@ class Search(ListView):
             Q(user__username__icontains=query)
         )
         return render(request, 'search_users.html', {'results': results})
-
- 
