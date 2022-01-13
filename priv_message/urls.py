@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import Threads
+from .views import PM_detail
 
 urlpatterns = [
-    path('inbox/', Threads, name='messages'),
+    path('inbox/', PM_detail.as_view(), name='messages'),
 ]
