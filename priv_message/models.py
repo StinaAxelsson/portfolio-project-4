@@ -37,9 +37,10 @@ class Inbox(models.Model):
 
 
     def get_message(user):
-        users = []
+        
         inbox = Inbox.objects.filter(user=user).values(
             'receiver').annotate(last=Max('send_date')).order_by('-last')
+        users = []
         for message in inbox:
             users.append({
                 'user': User.objects.get(pk=message['receiver']),

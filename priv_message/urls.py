@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import private_messages
+from .views import Threads
 
 urlpatterns = [
-    path('inbox/', private_messages, name='messages'),
+    path('inbox/', Threads, name='messages'),
 ]

@@ -12,8 +12,8 @@ class Messages(View):
         return render(request, 'private_message.html')
 
 
-def private_messages(request):
-    user = request.user
+def Threads(request, *args, **kwargs):
+    
     messages = Inbox.get_message(user=request.user)
     is_thread = None
     threads = None
