@@ -43,7 +43,7 @@ class Inbox(models.Model):
         for message in inbox:
             users.append({
                 'user': User.objects.get(pk=message['receiver']),
-                'last': message['-last'],
+                'last': message['last'],
                 'unread': Inbox.objects.filter(
                     user=user, receiver__pk=message['receiver'], read=False).count()
             })

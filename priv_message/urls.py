@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import Messages
+from .views import private_messages
 
 urlpatterns = [
-    path('inbox/', Messages.as_view(), name='messages'),
+    path('inbox/', private_messages, name='messages'),
 ]
