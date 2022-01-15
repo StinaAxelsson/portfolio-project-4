@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from socialnetwork.models import Users
 
 
-class PrivateMessage(models.Model):
-    pm = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    author = models.ForeignKey(User, related_name='sender', on_delete=models.CASCADE)
-    receiver = models.ForeignKey(User, related_name='receiver', on_delete=models.CASCADE)
+class Inbox(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='+')
+    user_receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='+')
+
+class Thread(models.Model):
+    thread = models.ForeignKey('Inbox', on_delete=models.CASCADE, blank=True, null=True, related_name='thread')
+    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
+    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='receiver')
+    body = models.CharField(max_length=500)
+    date = models.DateTimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)

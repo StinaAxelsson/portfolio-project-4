@@ -26,7 +26,6 @@ urlpatterns = [
     path('feed/', include('socialnetwork.urls')),
     path('followsystem/', include('followsystem.urls')),
     path('search/', include('search.urls')),
-    path('messages/', include('priv_message.urls')),
 ]
 
 if settings.DEBUG:

@@ -7,18 +7,26 @@
     <div class="row">
         <div class="list-group col-3">
           <h3>Inbox</h3>
-          <button class="btn-success mb-2">New Chat</button>
-          {% for message in messages %}
-            <a href="#" class="list-group-item list-group-item-action {% if is_thread == message.user.username %}active{% endif %}" aria-current="true">
+          <form action="{% url 'priv-message' %}" method="GET">
+            <button class="btn-success mb-2" type="submit">New Chat</button>
+          </form>
+        </div>
+          
+          {% for thread in inboxthread.all %}
+          <div class="list-group col-3">
+            <div class="row">
+            <a href="{% url 'message' message.pk %}" class="list-group-item list-group-item-action" aria-current="true">
               <div class="d-flex w-100 justify-content-between">
                 
-                <h5 class="mb-1">@{{ message.user.username }}</h5>
-                <small>{{ message.send_date }}</small>
+                <h5 class="mb-1">@{{ thread.user }}</h5>
+                <small>{{ thread.date }}</small>
               </div>
               <p class="mb-1"></p>
             </a>
-            {% endfor %}
           </div>
+        </div>
+          {% endfor %}
+          
         
 
           <div class="col-6">
