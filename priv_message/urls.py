@@ -2,7 +2,7 @@ from django.urls import path
 from .views import InboxList, CreateInboxForm
 
 urlpatterns = [
-    path('inbox/', InboxList.as_view(), name='inbox'),
-    path('inbox/start-chat', InboxList.as_view(), name='priv-message'),
+    path('chats/', InboxList.as_view(), name='inbox'),
+    path('chats/start-chat', CreateInboxForm.as_view(), name='priv-message'),
 ]
 
