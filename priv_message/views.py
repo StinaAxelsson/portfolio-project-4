@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth.models import User
 from django.db.models import Q
-from .models import Inbox
-from .forms import InboxForm
+from .models import Inbox, Thread
+from .forms import InboxForm, MessageForm
 
 
 class InboxList(View):
@@ -49,3 +49,35 @@ class CreateInboxForm(View):
                 return redirect('inbox', pk=inboxthread.pk)
         except:
             return redirect('priv-message')
+
+
+class Message(View):
+    def get(self, request, pk, *args, **kwargs):
+        form = MessageForm()
+        inbox = Inbox.objects.get(pk=pk)
+        message_thread = Thread.objects.filter(inbox__pk__contains=pk)
+
+        context ={
+            'inbox': inbox,
+            'form': form,
+            'message_thread': message_thread
+        }
+        return render(request, 'private_message.html', context)
+
+class CreateMessage(View):
+    def post(self, request, pk, *args, **kwargs):
+        inbox = Inbox.objects.get(pk=pk)
+        if inbox.user_receiver == request.user:
+            user_receiver = inbox.user
+        else:
+            user_receiver = inbox.user_receiver
+        
+        message = Thread(
+            thread=thread,
+            sender = request.user,
+            receiver = receiver,
+            body=request.POST.get('message')
+        )
+
+        message.save()
+        return redirect('thread', pk=pk)
