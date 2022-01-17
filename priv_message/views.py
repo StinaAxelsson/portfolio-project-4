@@ -34,50 +34,52 @@ class CreateInboxForm(View):
         try:
             user_receiver = User.objects.get(username=username)
             if Inbox.objects.filter(
-                user=request.user, user_receiver=receiver).exists():
-                inboxthread = Inbox.objects.filter(user=request.user, user_receiver=receiver)[0]
-                return redirect('inbox', pk=inboxthread.pk)
+                user=request.user, user_receiver=user_receiver).exists():
+                inbox_thread = Inbox.objects.filter(user=request.user, user_receiver=user_receiver)[0]
+
+                return redirect('message', pk=inbox_thread.pk)
                        
             elif Inbox.objects.filter(
-                user=receiver, user_receiver=request.user).exists():
-                inboxthread = Inbox.objects.filter(user=receiver, user_receiver=request.user)[0]
-                return redirect('inbox', pk=inboxthread.pk)
+                user=user_receiver, user_receiver=request.user).exists():
+                inbox_thread = Inbox.objects.filter(user=user_receiver, user_receiver=request.user)[0]
+                return redirect('message', pk=inbox_thread.pk)
 
             if form.is_valid():
-                inboxthread = Inbox(user=request.user,user_receiver=receiver)
-                inboxthread.save()
-                return redirect('inbox', pk=inboxthread.pk)
+                inbox_thread = Inbox(user=request.user,user_receiver=user_receiver)
+                inbox_thread.save()
+                return redirect('message', pk=inbox_thread.pk)
         except:
-            return redirect('priv-message')
+            return redirect('new-thread')
 
 
 class Message(View):
     def get(self, request, pk, *args, **kwargs):
         form = MessageForm()
-        inbox = Inbox.objects.get(pk=pk)
-        message_thread = Thread.objects.filter(inbox__pk__contains=pk)
+        inbox_thread = Inbox.objects.get(pk=pk)
+        message_thread = Thread.objects.filter(inbox_thread__pk__contains=pk)
 
-        context ={
-            'inbox': inbox,
+        context = {
+            'inbox_thread': inbox_thread,
             'form': form,
             'message_thread': message_thread
         }
         return render(request, 'private_message.html', context)
 
+
 class CreateMessage(View):
     def post(self, request, pk, *args, **kwargs):
-        inbox = Inbox.objects.get(pk=pk)
-        if inbox.user_receiver == request.user:
-            user_receiver = inbox.user
+        inbox_thread = Inbox.objects.get(pk=pk)
+        if inbox_thread.user_receiver == request.user:
+            user_receiver = inbox_thread.user
         else:
-            user_receiver = inbox.user_receiver
+            user_receiver = inbox_thread.user_receiver
         
         message = Thread(
-            thread=thread,
-            sender = request.user,
-            receiver = receiver,
+            inbox_thread=inbox_thread,
+            sender=request.user,
+            receiver=user_receiver,
             body=request.POST.get('message')
         )
-
         message.save()
-        return redirect('thread', pk=pk)
+
+        return redirect('message', pk=pk)

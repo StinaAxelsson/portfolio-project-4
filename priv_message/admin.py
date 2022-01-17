@@ -1,5 +1,6 @@
 from django.contrib import admin
+from .models import Inbox, Thread
 
+admin.site.register(Inbox)
 
-# Register your models here.
-# admin.site.register(PrivateMessage)
+admin.site.register(Thread)
