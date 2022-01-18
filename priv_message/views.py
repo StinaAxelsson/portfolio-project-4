@@ -7,6 +7,9 @@ from .forms import InboxForm, MessageForm
 
 
 class InboxList(View):
+    """
+    Class to get all the threads in the inbox
+    """
     def get(self, request, *args, **kwargs):
         inboxthread = Inbox.objects.filter(
             Q(user=request.user) | Q(user_receiver=request.user))
@@ -17,6 +20,9 @@ class InboxList(View):
 
 
 class CreateInboxForm(View):
+    """
+    Class for search a user to start a chat with
+    """
     def get(self, request, *args, **kwargs):
         form = InboxForm()
 
@@ -51,6 +57,10 @@ class CreateInboxForm(View):
 
 
 class Message(View):
+    """
+    Class for the form to create a message in the specific chat to the user and hold
+    the information
+    """
     def get(self, request, pk, *args, **kwargs):
         form = MessageForm()
         inbox_thread = Inbox.objects.get(pk=pk)
@@ -65,6 +75,9 @@ class Message(View):
 
 
 class CreateMessage(View):
+    """
+    Class for POST the message to the user and hold the send form 
+    """
     def post(self, request, pk, *args, **kwargs):
         inbox_thread = Inbox.objects.get(pk=pk)
         if inbox_thread.user_receiver == request.user:
