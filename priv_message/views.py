@@ -9,12 +9,12 @@ from .forms import InboxForm, MessageForm
 class InboxList(View):
     def get(self, request, *args, **kwargs):
         inboxthread = Inbox.objects.filter(
-            Q(user=request.user) | Q(user_receiver=request.user)
-        )
+            Q(user=request.user) | Q(user_receiver=request.user))
         context = {
             'inboxthread': inboxthread,
         }
         return render(request, 'private_message.html', context)
+
 
 class CreateInboxForm(View):
     def get(self, request, *args, **kwargs):
@@ -33,14 +33,12 @@ class CreateInboxForm(View):
 
         try:
             user_receiver = User.objects.get(username=username)
-            if Inbox.objects.filter(
-                user=request.user, user_receiver=user_receiver).exists():
+            if Inbox.objects.filter(user=request.user, user_receiver=user_receiver).exists():
                 inbox_thread = Inbox.objects.filter(user=request.user, user_receiver=user_receiver)[0]
 
                 return redirect('message', pk=inbox_thread.pk)
                        
-            elif Inbox.objects.filter(
-                user=user_receiver, user_receiver=request.user).exists():
+            elif Inbox.objects.filter(user=user_receiver, user_receiver=request.user).exists():
                 inbox_thread = Inbox.objects.filter(user=user_receiver, user_receiver=request.user)[0]
                 return redirect('message', pk=inbox_thread.pk)
 
@@ -75,7 +73,7 @@ class CreateMessage(View):
             user_receiver = inbox_thread.user_receiver
         
         message = Thread(
-            inbox_thread=inbox_thread,
+            thread=inbox_thread,
             sender=request.user,
             receiver=user_receiver,
             body=request.POST.get('message')
