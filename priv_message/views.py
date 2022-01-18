@@ -36,6 +36,7 @@ class CreateInboxForm(View):
         form = InboxForm(request.POST)
 
         username = request.POST.get('username')
+        print(username)
 
         try:
             user_receiver = User.objects.get(username=username)
@@ -49,7 +50,7 @@ class CreateInboxForm(View):
                 return redirect('message', pk=inbox_thread.pk)
 
             if form.is_valid():
-                inbox_thread = Inbox(user=request.user,user_receiver=user_receiver)
+                inbox_thread = Inbox(user=request.user, user_receiver=user_receiver)
                 inbox_thread.save()
                 return redirect('message', pk=inbox_thread.pk)
         except:
@@ -64,11 +65,13 @@ class Message(View):
     def get(self, request, pk, *args, **kwargs):
         form = MessageForm()
         inbox_thread = Inbox.objects.get(pk=pk)
-        message_thread = Thread.objects.filter(inbox_thread__pk__contains=pk)
+        print(inbox_thread)
+        message_thread = Thread.objects.filter(thread__pk__contains=pk)
+        print(message_thread)
 
         context = {
             'inbox_thread': inbox_thread,
-            'form': form,
+            'message_form': form,
             'message_thread': message_thread
         }
         return render(request, 'private_message.html', context)

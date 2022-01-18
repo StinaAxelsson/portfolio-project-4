@@ -38,6 +38,17 @@
           
          
           <div class="col-6">
+            <div class="row">
+              <div class="col-md-8 align-self-end card">
+                <form action="{% url 'send' inbox_thread.pk %}" method="POST">
+                  {% csrf_token %}
+                  {{ message_form | crispy }}
+                  <div class="d-grid gap-2 mt-3">
+                  
+                </div>
+                </form>
+              </div>
+            </div>
             {% if inbox_thread.user_receiver == request.user %}
             <h3>Messages @{{ inbox_thread.user }} </h3>
             {% else %}
@@ -48,7 +59,7 @@
               {% for message in message_thread %}
               <div class="col-8 border mt-2 rounded-end">
                 {% if message.sender == request.user %}
-                <p class="m-2">{{ message.body }}</p>
+                <p class="m-2">{{ message.body }} Hello </p>
               </div>
 
                 {% elif message.receiver == request.user %}
@@ -60,17 +71,7 @@
       
             {% endfor %}
 
-           <div class="row">
-            <div class="col-md-8 align-self-end card">
-              <form action="{% url 'send' inbox_thread.pk %}" method="POST">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-light" type="submit">Send</button>
-              </div>
-              </form>
-            </div>
-          </div>
+
             {% endfor %}
     </div>
  
