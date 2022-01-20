@@ -1,1 +1,1 @@
-web: gunicorn utopially.wsgi
+web: gunicorn utopially.wsgi:application
