@@ -8,16 +8,16 @@
     <div class="row">
       <div class="col-md-8 mx-auto col-sm-12">
         {% if inbox_thread.user_receiver == request.user %}
-          <h3>Conversation with @{{ inbox_thread.user }}</h3>
+          <h3 class="border-bottom text-center second-rubric">Conversation with {{ inbox_thread.user }}</h3>
         {% else %}
-          <h3>Conversation with @ {{ inbox_thread.user_receiver }}</h3>
+          <h3 class="border-bottom text-center second-rubric">Conversation with {{ inbox_thread.user_receiver }}</h3>
         {% endif %}
       </div>
     </div>
 
-    <div class="chat-box">
+    <div class="chat-box mt-4">
     {% for message in message_thread %}
-    <div class="row m-0">
+    <div class="row m-0 p-0">
     <div class="col-md-8 mx-auto col-sm-12 m-2" >
       {% if message.sender == request.user %}
         <div class="message-send">
@@ -30,10 +30,11 @@
     </div>
     {% endif %}
   </div>
-</div>
   {% endfor %}
-    
+  </div>
 </div>
+    
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8 mx-auto col-sm-12 m-2">
       <form action="{% url 'send' inbox_thread.pk %}" method="POST">
@@ -45,6 +46,7 @@
       </form>
 
     </div>
-
   </div>
+</div>
+
 {%endblock%}
