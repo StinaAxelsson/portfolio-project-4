@@ -157,6 +157,9 @@ textarea{
     
 }
 
+#chat-search{
+    display: block;
+}
 
 /*--------------------------Footer--------*/
 

@@ -30,7 +30,7 @@ class CreateInboxForm(View):
             'form': form
         }
 
-        return render(request, 'private_message.html', context)
+        return render(request, 'message_search.html', context)
 
     def post(self, request, *args, **kwargs):
         form = InboxForm(request.POST)

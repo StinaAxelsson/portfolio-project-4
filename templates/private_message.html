@@ -5,19 +5,17 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="list-group col-3">
-          <h3>Inbox</h3>
-          <form action="{% url 'new-thread' %}" method="GET">
-            <button class="btn-success mb-2" type="submit">New Chat</button>
-          </form>
+    <div class="row justify-content-center m-2">
+        <div class="list-group col-md-8 col-sm-12 mt-3">
+          <h1 class="rubrics text-center mb-3"><i class="far fa-envelope big-icon"></i> Inbox</h1>
+          <p class="border-bottom text-center">Your conversations:</p>
           {% for inbox_thread in inboxthread.all %}
-          <div class="list-group col-3">
+          <div class="list-group col-6 mx-auto">
             <div class="row">
             <a href="{% url 'message' inbox_thread.pk %}" class="list-group-item list-group-item-action" aria-current="true">
               <div class="d-flex w-100 justify-content-between">
                 
-                <h5 class="mb-1">@{{ inbox_thread.user }}</h5>
+                <h5 class="mb-1">{{ inbox_thread.user_receiver }}</h5>
                 <small>{{ inbox_thread.date }}</small>
               </div>
               <p class="mb-1"></p>
@@ -26,16 +24,21 @@
         </div>
         {% endfor %}
         </div>
+
         <div class="row">
-          <div id="chat-search" class="col-md-3 col-sm-12">
-            <form method="POST">
-              {% csrf_token %}
-              <p>Please enter the username of the person you want to start chat with</p>
-              {{ form | crispy }}
-              <button class="btn-success mb-2" type="submit">Start Chat</button>
-            </form>
-          </div>
+          <div class="col-md-8 col-sm-12 m-2 mt-5 mx-auto">
+          <form action="{% url 'new-thread' %}" method="GET">
+            <div class="d-grid gap-2">
+            <button class="btn btn-color" type="submit">New Chat</button>
+            </div>
+          </form>
         </div>
+      </div>
+        
+      
+
+      </div>
+    </div>
 
 
 
