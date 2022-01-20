@@ -132,6 +132,31 @@ textarea{
 .search-result:hover{
     border-bottom: black 1px solid;
 }
+/*---------------------------Messages-----*/
+
+.message-send{
+    border-radius: 20px;
+    float: right;
+    background-color: #A4EAC0;
+    padding: 0.4rem;
+    
+}
+
+.message-receiver{
+    border-radius: 20px;
+    float: left;
+    background-color: #F7BAF0;
+    padding: 0.4rem;
+    
+}
+
+.chat-box{
+    height: 25rem;
+    width: 100%;
+    overflow-y: scroll;
+    
+}
+
 
 /*--------------------------Footer--------*/
 

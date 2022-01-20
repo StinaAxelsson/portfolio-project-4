@@ -11,16 +11,6 @@
           <form action="{% url 'new-thread' %}" method="GET">
             <button class="btn-success mb-2" type="submit">New Chat</button>
           </form>
-          <div id="chat-search">
-            <form method="POST">
-              {% csrf_token %}
-              <p>Please enter the username of the person you want to start chat with</p>
-              {{ form | crispy }}
-              <button class="btn-success mb-2" type="submit">Start Chat</button>
-            </form>
-          </div>
-        </div>
-          
           {% for inbox_thread in inboxthread.all %}
           <div class="list-group col-3">
             <div class="row">
@@ -34,46 +24,23 @@
             </a>
           </div>
         </div>
-          
-          
-         
-          <div class="col-6">
-            <div class="row">
-              <div class="col-md-8 align-self-end card">
-                <form action="{% url 'send' inbox_thread.pk %}" method="POST">
-                  {% csrf_token %}
-                  {{ message_form | crispy }}
-                  <div class="d-grid gap-2 mt-3">
-                  
-                </div>
-                </form>
-              </div>
-            </div>
-            {% if inbox_thread.user_receiver == request.user %}
-            <h3>Messages @{{ inbox_thread.user }} </h3>
-            {% else %}
-            <h3>Messages @{{ inbox_thread.user_receiver }} </h3>
-            {% endif %}
-            <div class="border" style="width: 100%; height: 25rem; overflow-y: scroll;" id="chat-box">
-
-              {% for message in message_thread %}
-              <div class="col-8 border mt-2 rounded-end">
-                {% if message.sender == request.user %}
-                <p class="m-2">{{ message.body }} Hello </p>
-              </div>
-
-                {% elif message.receiver == request.user %}
-              <div class="col-8 border mt-2 rounded-end">
-                <p class="m-2">{{ message.body }}</p>
-              </div>
-                {% endif %}
-            </div>
-      
-            {% endfor %}
+        {% endfor %}
+        </div>
+        <div class="row">
+          <div id="chat-search" class="col-md-3 col-sm-12">
+            <form method="POST">
+              {% csrf_token %}
+              <p>Please enter the username of the person you want to start chat with</p>
+              {{ form | crispy }}
+              <button class="btn-success mb-2" type="submit">Start Chat</button>
+            </form>
+          </div>
+        </div>
 
 
-            {% endfor %}
-    </div>
+
+           
+    
  
 
 
