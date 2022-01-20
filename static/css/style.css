@@ -95,6 +95,7 @@ textarea{
 .profile-image{
     width: 15rem;
     height: 15rem;
+    display: grid;
 }
 
 .moon-friends{
