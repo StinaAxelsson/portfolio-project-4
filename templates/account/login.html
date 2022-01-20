@@ -12,16 +12,16 @@
   <div class="row justify-content-center">
     <div class="col-md-6 col-sm-12">
 
-        <h1>{% trans "Sign In" %}</h1>
-        <p>{% blocktrans %}If you have not created an account yet, then please
+        <h1 class="text-center rubrics">{% trans "Sign In" %}</h1>
+        <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
       </div>
   </div>
-</div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-6 col-sm-12">
-        <form class="login" method="POST" action="{% url 'account_login' %}">
+
+        
+          <div class="row justify-content-center mt-3 m-5">
+            <div class="col-md-5 col-sm-12">
+        <form method="POST" action="{% url 'account_login' %}" class="text-center">
           {% csrf_token %}
           {{ form|crispy }}
           {% if redirect_field_value %}
@@ -36,5 +36,6 @@
     </div>
   </div>
 </div>
+
 
 {% endblock %}

@@ -26,6 +26,9 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
 
+    def number_of_comments(self):
+        return self.comment.count()
+
 
 # Class for choosing a gender in the User class
 class Gender(Choices):
@@ -46,22 +49,14 @@ class Users(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     picture = CloudinaryField('image', default='placeholder')
     birthday = models.DateField(blank=True, null=True)
-    gender = models.IntegerField(choices=Gender(), default=Gender.other.name)
+    gender = models.IntegerField(choices=Gender(), default=Gender.other.id)
     location = models.CharField(max_length=100, blank=True, null=True)
     bio = models.TextField(max_length=500, blank=True, null=True)
     followers = models.ManyToManyField(User, blank=True, related_name='followers')
 
     def number_of_followers(self):
         return self.followers.count()
-    
-    def user_gender(self):
-        gender = Gender.from_id(self.gender)
-        if gender == Gender.male:
-            return 'Male'
-        elif gender == Gender.female:
-            return 'Female'
-        else:
-            return 'Other'
+
 
 
 """
@@ -72,7 +67,6 @@ for not getting errors when loggin in after created a new user.
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Users.objects.create(user=instance)
-
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'socialnetwork',
     'followsystem',
     'search',
+    'priv_message',
 
     'django.contrib.admin',
     'django.contrib.auth',

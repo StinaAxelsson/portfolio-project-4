@@ -22,7 +22,7 @@
                     {% else %}
                     <img height="30" width="30" class="rounded-circle" src="{{ result.user.profile.picture.url }}" />
                     {% endif %}
-                    <a href="{% url 'profile' result.pk %}">{{ result.user }}</a>
+                    <a href="{% url 'search_user' result.pk %}">{{ result.user }}</a>
                 </p>
         </div>
     </div>
