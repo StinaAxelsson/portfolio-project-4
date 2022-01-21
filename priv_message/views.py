@@ -13,13 +13,10 @@ class InboxList(View):
     def get(self, request, *args, **kwargs):
         inboxthread = Inbox.objects.filter(
             Q(user=request.user) | Q(user_receiver=request.user))
-        isread = Inbox.objects.all()
 
-        isread.read = True
-        
         context = {
             'inboxthread': inboxthread,
-            'isread': isread,
+            
         }
         return render(request, 'private_message.html', context)
 

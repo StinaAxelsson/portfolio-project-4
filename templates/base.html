@@ -45,7 +45,7 @@
                 {{ request.user.username }}
                </a>
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" title="Profile-page" href="{% url 'profile' user.profile.pk %}">Profile</a>
+                 <a class="dropdown-item" title="Profile-page" href="{% url 'profile' request.user.profile.pk %}">Profile</a>
                  <a class="dropdown-item" title="Logout" href="{% url 'account_logout' %}">Logout</a>
                </div>
              </li>
@@ -56,6 +56,9 @@
             <li class="nav-item">
               <a class="nav-link" title="Messages" href="{% url 'inbox' %}"><i class="far fa-envelope icon"></i>Inbox</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" title="Messages" href="{% url 'upload' %}"><i class="far fa-envelope icon"></i>Upload</a>
+        </li>
 
             <form class="d-flex form-inline" method="GET" action="{% url 'search_user' %}">
               <input class="form-control mr-sm-2" type="search" placeholder="Search by username" aria-label="Search" name="query" value="{{ request.GET.query }}">

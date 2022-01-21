@@ -13,15 +13,31 @@ class PostList(LoginRequiredMixin, View):
     and a form to create new posts for the feed.
     """
     def get(self, request, *args, **kwargs):
-        posts = Post.objects.all().order_by('-created_on')
-        form = PostForm()
+        following_feed = request.user
+        posts = Post.objects.filter(
+            author__profile__followers__in=[following_feed.id]
+        ).order_by('-created_on')
+        
 
         context = {
             'post_feed': posts,
-            'form': form,
+            
         }
 
         return render(request, 'post_feed.html', context)
+
+
+class Upload(LoginRequiredMixin, View):
+
+    def get(self, request, *args, **kwargs):
+        form = PostForm()
+        
+        context = {
+            'form': form,
+            
+        }
+
+        return render(request, 'upload_post.html', context)
 
 
     def post(self, request, *args, **kwargs):
