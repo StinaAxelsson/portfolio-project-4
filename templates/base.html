@@ -51,10 +51,10 @@
              </li>
 
             <li class="nav-item">
-              <a class="nav-link" title="social feed"  href="{% url 'post_feed' %}"><i class="far fa-plus-square icon"></i></a>
+              <a class="nav-link" title="social feed"  href="{% url 'post_feed' %}"><i class="far fa-plus-square icon"></i>Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" title="Messages" href="{% url 'inbox' %}"><i class="far fa-envelope icon"></i></a>
+              <a class="nav-link" title="Messages" href="{% url 'inbox' %}"><i class="far fa-envelope icon"></i>Inbox</a>
           </li>
 
             <form class="d-flex form-inline" method="GET" action="{% url 'search_user' %}">
@@ -79,16 +79,18 @@
       </div>
     </nav>
 
-    <!--{% if messages %}
+    {% if messages %}
     <div class="row justify-content-center pt-3">
-      <div class="col-md-6">
+      <div class="col-md-4 col-sm-8">
         {% for message in messages %}
-        <div class="alert alert-primary" role="alert">{{message}}</div>
+        <div class="alert alert-color fade show" role="alert">{{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         {% endfor %}
     </div>
     </div>
-    {% endif %} -->
-    <div class="mt-5">
+    {% endif %}
+  
 
   <main class="flex-shrink-0 main-bg d-flex flex-column min-vh-100"> 
 
