@@ -52,29 +52,16 @@
                             </div> 
                                 <div class="position-relative"> 
                                     <p class="p-body-font m-3">{{ post.body }}</p>
+                                    
+                                
+                                <div class="col justify-between m-3">
+                                    <small class="text-muted"> {{ post.created_on }} </small>
+
+                                    <div class="mt-2">
+                                        <p><i class="far fa-moon"></i> Likes <span class="text-secondary"> {{ post.number_of_likes }} </span><i class="far fa-comment"></i> Comments </p>
+                                    </div>
                                     <a href="{% url 'post_detail' post.pk %}" class="stretched-link"></a>
                                 </div>
-                                <div class="m-3">
-                                    <small class="text-muted"> {{ post.created_on }}</small>
-                                    {% if user.is_authenticated %}
-                                    <form class="d-inline" action="{% url 'post_like' post.pk %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if liked %}
-                    
-                                        <button type="submit" name="post_id" value="{{post.pk}}" class="btn-like"><i class="fas fa-moon"></i></button>
-                    
-                                    {% else %}
-                                        <button type="submit" name="post_id" value="{{post.pk}}" class="btn-like"><i class="far fa-moon"></i></button>
-                    
-                                    {% endif %}
-                                    </form>
-                                    {% else %}
-                                    <span class="text-secondary">{{ post.number_of_likes }}</span>
-                                    {% endif %}
-                                    <span class="text-secondary"> {{ post.number_of_likes }}  </span>
-                                    <span class="text-secondary"><i class="far fa-comment"></i> {{ post.number_of_comments }}  </span>
-                                    
-                                    
                                 </div>
                     
                     </div>

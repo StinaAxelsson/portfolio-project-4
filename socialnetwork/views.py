@@ -105,7 +105,7 @@ class PostDetail(LoginRequiredMixin, View):
             'liked': liked,
             'comments': comments,
         }
-        return render(request, 'post_feed.html', context)
+        return render(request, 'post_detail.html', context)
 
 class PostLike(LoginRequiredMixin, View):
     """

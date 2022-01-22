@@ -187,6 +187,13 @@ textarea{
     font-stretch: 2px;
 }
 
+.conversations{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    font-family: 'Handlee';
+}
+
 /*--------------------------Footer--------*/
 
 .footer-copy{
