@@ -85,7 +85,7 @@ Showing some information of what the site is about, have an about us file and a 
 I have two main fonts from Google Fonts. 
 'Handlee' and 'Dancing script' that meet up my thoughts of how i want a first time user want to feel when they visit. Soft and friendly and kind of playful. Using this in the Logo and as rubric. And Handlee is using as rubrics and bread-text.
 ### Colours
-![]()
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/colours.png)
 Main colour is white, with details as in navbar and footer with the gradiant mix of #A6BFFF and #A4EAC0 and for all the buttons on the page. The #F7BAF0 is used for smaller details and some hover colours and the receivers chat bubble. The colours combine is soft, beautifyl and gives the impression that i seeking for in the theme of the site.
 ## Wireframes
 # Features
