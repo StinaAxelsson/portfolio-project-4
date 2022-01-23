@@ -87,6 +87,11 @@
 .liked{
     color: #F7BAF0;
 }
+
+.feed-rubric{
+    font-family: 'Dancing script';
+    font-size: 38px;
+}
 /*-----------------------Post-detail-----------*/
 
 textarea{
