@@ -57,6 +57,29 @@ Utopi'Ally Community is a social media website, where you can register an accoun
 
 ## Site owner goals
 ## Structure
+* Landing page/start page for un authentical users.
+Showing some information of what the site is about, have an about us file and a login and register form.
+* Landingpage for logged in users
+  * Feed, when user sign up they are provide some information of how to upload, create more information in profile page, this text will dissapere when the user upload their first post or start follow users who have upload posts earlier.
+* Profile page
+  * Personal page for the user, with fields of information to add about themself
+  * Add profile image and edit profile.
+  * See how many followers (moon friends) they have and a button to follow or unfollow other users.
+  * Uploaded posts that the user have is collected on their own pages.
+* Inbox
+  * An inbox that collect all active threads
+  * Start a new chat and search for user to start chat with
+  * The conversation/chat with send and received messages
+* Search
+  * search input box in the navbar to easy search users
+  * shows all users that include the search query.
+* Upload
+  * From navbar users can upload a post/image that uploads in the feed (and profile page)
+* post detail
+  * When user want to comment or like, you have to click on the post to get more details and show comments.
+  * From post detail you can edit or delete your own posts and delete comments that user have made.
+* Footer
+  * contains links to site owners social media
 ## Design Choises
 ### Fonts
 I have two main fonts from Google Fonts. 
@@ -71,7 +94,13 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ## Features left to implement
 # Technologies used
 ## Languages
+* HTML5
+* CSS
+* Javascript
+* Python
 ## Frameworks
+* Django
+* Bootstrap
 ## Other programmes
 # Testing
 ## Validator testing
