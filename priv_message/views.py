@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from .models import Inbox, Thread
+from .models import Inbox, Thread, Notifications
 from .forms import InboxForm, MessageForm
 
 
@@ -115,3 +115,5 @@ class DeleteInboxThread(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         thread = self.get_object()
         return self.request.user == thread.user
+
+
