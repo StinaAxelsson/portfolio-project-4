@@ -129,6 +129,22 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 * Bootstrap
 ## Other programmes
 # Testing
+I have testing this project with manual testing. I have test i by myself during the development and once it was deployed, I got help by my family to improve and find bugs.
+## Manual testing by user storys
+### EPIC 1
+  - **As a user I can easy and safely register an account so that I can use my account for the websites purpose** 
+    - **Implementations**: Using and installing allauth for users registrations, login and logout, getting all the accounts template for this installing in my project to make sure this is safe and works.
+    - **Test**: I test this with first installing allauth, getting urls done and the templates, I try register and the account created, i use receive signals for register users for saving them without errors in database.
+    - **Result**: This test pass and works fine.
+  - **As a user I can use my email or username so that i can login with my account**
+    - **Implementations**: For this site, the users need their username to login.
+    - **Test**: Testing this by log in with the created account after logging out.
+    - **Result**: This test pass and works how it should.
+  - **As a user I can easy find where to register and create an account so that I can be a member and join the community**
+    - **Implementations**: From navbar i the header on the landind page you have all the options. And from the button on index file, and about us file. While logged in you can logout from navbar.
+    - **Test**: Testing this by put up options so its easy to find
+    - **Result**: This test pass and works how it should.
+
 ## Validator testing
 ## Manually test user storys
 ## Bugs
