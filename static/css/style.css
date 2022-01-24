@@ -155,6 +155,10 @@ textarea{
 
 /*-------------------------------Search results-----*/
 
+.not-visible{
+    display: none;
+}
+
 .search-result, 
 .bio-text{
     

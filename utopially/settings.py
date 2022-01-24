@@ -59,6 +59,8 @@ INSTALLED_APPS = [
 
     'crispy_forms',
 
+    'jquery',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
