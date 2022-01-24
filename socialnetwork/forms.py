@@ -11,8 +11,9 @@ class PostForm(forms.ModelForm):
             'placeholder': 'Whats on your mind today?...'
         })
     )
-    
+
     upload = forms.ImageField(required=False)
+
     class Meta:
         model = Post
         fields = ['body', 'upload']
