@@ -159,22 +159,22 @@ textarea{
     display: none;
 }
 
-.search-result, 
-.bio-text{
-    
-    font-size: 20px;
-    text-align: center;
-
+.search-img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
 }
 
-.search-result a{
+.search-item{
     text-decoration: none;
+    font-family: 'Handlee';
     color: black;
 }
 
-.search-result:hover{
-    border-bottom: black 1px solid;
+.search-item:hover{
+    color: #7d9ef3;
 }
+
 /*---------------------------Messages-----*/
 
 .message-send{

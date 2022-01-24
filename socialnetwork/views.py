@@ -222,3 +222,6 @@ class UserProfileEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         profile = self.get_object()
         return self.request.user == profile.user
 
+
+def page_not_found_view(request, exception):
+    return render(request, '404.html', status=404)

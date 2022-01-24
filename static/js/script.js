@@ -19,13 +19,35 @@ console.log(csrfToken)
 const getsearchData =(username) => {
     $.ajax({
         type: 'POST',
-        url: 'search/',
+        url: '/search/result/',
         data: {
-            
+            'csrfmiddlewaretoken': csrfToken,
             'username': username
         },
         success: (result)=>{
-            console.log(result)
+            console.log(result.data)
+            const data = result.data
+            
+            if (Array.isArray(data)) {
+                resultBox.innerHTML = ""
+                data.forEach(username=> {
+                resultBox.innerHTML += `
+                <a href="${url}${username.pk}" class="search-item">
+                    <div class="row mt-2 mb-2">
+                        <div class="col-12">
+                            <h3>@${username.user}</h3>
+                        </div>
+                    </div>
+                </a>
+                `
+                })
+            } else {
+                if (searchInput.value.length > 0) {
+                    resultBox.innerHTML = `<b>${data}</b>`
+                } else {
+                    resultBox.classList.add('not-visible')
+                }
+            }
         },
         error: (err)=> {
             console.log(err)
