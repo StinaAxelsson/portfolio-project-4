@@ -1,4 +1,5 @@
-/**codesnippet from django I think therefore i blog
+/**
+ * codesnippet from django I think therefore i blog
  * Fade the messages away automatic.
  * */
 setTimeout(function () {
@@ -7,14 +8,14 @@ setTimeout(function () {
     alert.close();
 }, 2500);
 
-//search form 
-
+/**
+ * jquery using ajax to search form in search view
+ */
 let url = window.location.href
 let searchForm = document.getElementById('search-form')
 let searchInput = document.getElementById('search-input')
 let resultBox = document.getElementById('result-box')
 let csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value
-console.log(csrfToken)
 
 const getsearchData =(username) => {
     $.ajax({
@@ -25,7 +26,6 @@ const getsearchData =(username) => {
             'username': username
         },
         success: (result)=>{
-            console.log(result.data)
             const data = result.data
             
             if (Array.isArray(data)) {
@@ -50,13 +50,11 @@ const getsearchData =(username) => {
             }
         },
         error: (err)=> {
-            console.log(err)
         }
     })
 }
 
 searchInput.addEventListener('keyup', e=>{
-    console.log(e.target.value)
 
     if (resultBox.classList.contains('not-visible')){
         resultBox.classList.remove('not-visible')

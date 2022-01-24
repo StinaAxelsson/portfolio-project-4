@@ -90,6 +90,13 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ## Wireframes
 # Features
 ## Data storage
+| Title      	| Key in Database   	| Form Validaton 	| Data Type       	|
+|------------	|-------------------	|----------------	|-----------------	|
+| body       	| post-body         	| max_length=300 	| TextField       	|
+| created_on 	| auto_now_add=True 	| None           	| ForeignKey      	|
+| author     	| User              	| None           	| ForeignKey      	|
+| upload     	| image             	| image          	| CloudinaryField 	|
+| likes      	| likes             	| None           	| ManytoManyField 	|
 ## Existing features
 ## Features left to implement
 # Technologies used
