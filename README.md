@@ -90,13 +90,32 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ## Wireframes
 # Features
 ## Data storage
+### Post model
 | Title      	| Key in Database   	| Form Validaton 	| Data Type       	|
 |------------	|-------------------	|----------------	|-----------------	|
-| body       	| post-body         	| max_length=300 	| TextField       	|
-| created_on 	| auto_now_add=True 	| None           	| ForeignKey      	|
+| body       	| post-body         	| max_length=500 	| TextField       	|
+| created_on 	| auto_now_add=True 	| None           	| DateTimeField    	|
 | author     	| User              	| None           	| ForeignKey      	|
 | upload     	| image             	| image          	| CloudinaryField 	|
 | likes      	| likes             	| None           	| ManytoManyField 	|
+### Comment model
+| Title      	| Key in Database   	| Form Validaton 	| Data Type     	|
+|------------	|-------------------	|----------------	|---------------	|
+| comment    	| comment           	| max_length=500 	| TextField     	|
+| created_on 	| auto_now_add=True 	| None           	| DateTimeField 	|
+| author     	| User              	| None           	| ForeignKey    	|
+| post       	| Post              	| None           	| ForeignKey    	|
+### Users (profile)
+| Title     	| Key in Database   	| Form Validaton          	| Data Type       	|
+|-----------	|-------------------	|-------------------------	|-----------------	|
+| User      	| User, primary_key 	| None                    	| OnetoOneField   	|
+| name      	| name              	| max_length=50           	| CharField       	|
+| picture   	| image             	| None                    	| CloudinaryField 	|
+| birthday  	| birthday          	| blank=True              	| DateField       	|
+| gender    	| choices=Gender()  	| default=Gender.other.id 	| IntegerField    	|
+| location  	| location          	| max_length=100          	| CharField       	|
+| bio       	| bio               	| max_length=500          	| TextField       	|
+| followers 	| followers         	| User, blank=True        	| ManyToManyField 	|
 ## Existing features
 ## Features left to implement
 # Technologies used
