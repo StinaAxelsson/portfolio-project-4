@@ -16,7 +16,7 @@ def get_result(request):
         result = None
         username = request.POST.get('username')
         query = Users.objects.filter(user__username__icontains=username)
-        
+
         if len(query) > 0 and len(username) > 0:
             data = []
             for i in query:
@@ -35,5 +35,3 @@ def get_result(request):
             'data': result
             })
     return JsonResponse({})
-
-
