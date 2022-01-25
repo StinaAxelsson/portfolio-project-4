@@ -13,5 +13,3 @@ urlpatterns = [
     path('profile/<int:pk>', UserProfile.as_view(), name='profile'),
     path('profile/edit/<int:pk>', UserProfileEdit.as_view(), name='profile_edit'),
 ]
-
-handler404 = "socialnetwork.views.page_not_found_view"

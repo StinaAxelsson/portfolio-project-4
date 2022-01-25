@@ -146,7 +146,6 @@ I have testing this project with manual testing. I have test i by myself during 
     - **Result**: This test pass and works how it should.
 
 ## Validator testing
-## Manually test user storys
 ## Bugs
 # Deployment
 # Credits
