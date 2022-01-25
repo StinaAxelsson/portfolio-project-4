@@ -28,7 +28,7 @@ class PostList(LoginRequiredMixin, View):
 
 
 class Upload(LoginRequiredMixin, View):
-    """ 
+    """
     Form to upload a post from anywhere you are on the page.
     And it uploads on your own profile page, and feed.
     """
@@ -39,12 +39,10 @@ class Upload(LoginRequiredMixin, View):
         context = {
             'form': form,
         }
-
         return render(request, 'upload_post.html', context)
 
 
     def post(self, request, *args, **kwargs):
-
         posts = Post.objects.all().order_by('-created_on')
         form = PostForm(request.POST, request.FILES)
 
@@ -53,10 +51,7 @@ class Upload(LoginRequiredMixin, View):
             add_post.author = request.user
             add_post.save()
 
-    
         return redirect('post_feed')
-
-
 
 
 class PostDetail(LoginRequiredMixin, View):
@@ -65,7 +60,6 @@ class PostDetail(LoginRequiredMixin, View):
     they see the post on its own and can comment, edit and delete comments,
     or edit and delete the post if its created by the user.
     """
-
     def get(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
         form = CommentForm()
@@ -74,7 +68,7 @@ class PostDetail(LoginRequiredMixin, View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-    
+
         context = {
             'post': post,
             'form': form,

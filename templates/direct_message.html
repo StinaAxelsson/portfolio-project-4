@@ -24,7 +24,8 @@
       {% if message_thread.all.count == 0 %}
           <p class="text-center text-muted m-5">
             No messages here yet! <br>
-            Type somenting and press send, to start the conversation!</p>
+            Type somenting and press send, to start the conversation!
+          </p>
       {% endif %}
     {% for message in message_thread %}
     <div class="row m-0 p-0">
@@ -57,6 +58,7 @@
 
     </div>
   </div>
+</div>
 
 
 {%endblock%}
