@@ -26,7 +26,6 @@ def get_result(request):
                 }
                 data.append(item)
             result = data
-            print(data)
         else:
             result = 'Sorry, no one with that username could be find!'
 

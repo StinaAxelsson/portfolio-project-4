@@ -2,7 +2,7 @@
  * codesnippet from django I think therefore i blog
  * Fade the messages away automatic.
  * */
-setTimeout(function () {
+ setTimeout(function () {
     let messages = document.getElementById('msg-box');
     let alert = new bootstrap.Alert(messages);
     alert.close();
@@ -11,11 +11,10 @@ setTimeout(function () {
 /**
  * jquery using ajax to search form in search view
  */
-let url = window.location.href
-let searchForm = document.getElementById('search-form')
-let searchInput = document.getElementById('search-input')
-let resultBox = document.getElementById('result-box')
-let csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value
+let url = window.location.href;
+let searchInput = document.getElementById('search-input');
+let resultBox = document.getElementById('result-box');
+let csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
 
 const getsearchData =(username) => {
     $.ajax({
@@ -26,10 +25,10 @@ const getsearchData =(username) => {
             'username': username
         },
         success: (result)=>{
-            const data = result.data
+            const data = result.data;
             
             if (Array.isArray(data)) {
-                resultBox.innerHTML = ""
+                resultBox.innerHTML = "";
                 data.forEach(username=> {
                 resultBox.innerHTML += `
                 <a href="${url}${username.pk}" class="search-item">
@@ -39,26 +38,26 @@ const getsearchData =(username) => {
                         </div>
                     </div>
                 </a>
-                `
-                })
+                `;
+                });
             } else {
                 if (searchInput.value.length > 0) {
-                    resultBox.innerHTML = `<b>${data}</b>`
+                    resultBox.innerHTML = `<b>${data}</b>`;
                 } else {
-                    resultBox.classList.add('not-visible')
+                    resultBox.classList.add('not-visible');
                 }
             }
         },
         error: (err)=> {
         }
-    })
-}
+    });
+};
 
 searchInput.addEventListener('keyup', e=>{
 
     if (resultBox.classList.contains('not-visible')){
-        resultBox.classList.remove('not-visible')
+        resultBox.classList.remove('not-visible');
     }
 
-    getsearchData(e.target.value)
-})
+    getsearchData(e.target.value);
+});
