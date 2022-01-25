@@ -233,6 +233,15 @@ I have testing this project with manual testing. I have test i by myself during 
 
 ## Validator testing
 ## Bugs
+During the development of this project, I got alot of bugs and errors. Some of them was easy to fix by just read what the error message that telling me what is wrong. Small errors like indent problems, forgot to import something from views, models or urls, spelling errors in the variables etc.
+Then I got bigger issues and errors that I had more problem to solve. some of them I solved after searching through the entire internet and found good answers in eg stackoverflow and similar forums. Some problems I had to get help from tutor support who has helped me solve some of the biggest bugs during the project.
+
+One of the bigger issues I got was to get the private messages function to work. I got alot of problem with both the templates, views and urls. From the beginning I wantet the inbox, search for user to chat with, and the messages thread to be all at the same template, like a e-mail structure. But that caused so many problem and it did'nt want to work well. I asked for help from the tutor team and they got me on the right track, and then I got alot of help from my mentor. But I finally manage to fix the problem by just add two more templates and divide the code into three parts, so you have the inbox for its own, then the search part on its own and then the chat box on its own, and it looked much better in on both desktop view and above all the phone view. And it worked fine!
+
+Another bug that has given me problems is the search field. I first had them as a separate file and search from the template, but did not manage to hide the search result before I tried to search. So I changed so that I had the search box up in the navbar and then it worked well! On the other hand, I wanted them in my own template as my first plan was and therefore I redid them and had to use javascript to make it work the way I wanted. I received good help from the tutor team to lead me in the right direction on this too.
+
+Other bugs was to write right variables in the templates and then to fix the static files to show when deployed the project to Heroku and realised that i had to change debug=true til False!
+
 # Deployment
 # Credits
 # Acknowledgements
