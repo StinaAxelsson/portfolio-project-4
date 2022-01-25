@@ -127,7 +127,22 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ## Frameworks
 * Django
 * Bootstrap
+* Jquery
 ## Other programmes
+* [Heroku](https://id.heroku.com/login) - Deploy my site
+* [Pep8](http://pep8online.com/) - Validate python code
+* [Gitpod](https://gitpod.io/workspaces) - My workspace 
+* [GitHub](https://github.com/) - Make my repository and save my user storys and code.
+* [Am I responsive](http://ami.responsivedesign.is/) - Fix the photo for the readme
+* [Balsamiq](https://balsamiq.com/) - Make my wireframes
+* [Font Awsome](https://fontawesome.com/) - Got all the icons for the site
+* [Google Fonts](https://fonts.google.com/) - Got my fonts
+* [W3C Validator](https://jigsaw.w3.org/css-validator/validator.html.en) - Validate CSS and HTML
+* [JShint](https://jshint.com/)
+* [Markdown table generator](https://www.tablesgenerator.com/markdown_tables#) - Help with generate my tables for the readme
+* [Color palett generator](https://coolors.co/) - Make my palette of colors
+* Chrome Devtools - Fins issues, bugs and errors during the development on the liveserver.
+* [Cloudinary](https://cloudinary.com/) - Store all the static images that users upload on the site.
 # Testing
 I have testing this project with manual testing. I have test i by myself during the development and once it was deployed, I got help by my family to improve and find bugs.
 ## Manual testing by user storys
@@ -243,5 +258,43 @@ Another bug that has given me problems is the search field. I first had them as 
 Other bugs was to write right variables in the templates and then to fix the static files to show when deployed the project to Heroku and realised that i had to change debug=true til False!
 
 # Deployment
+When I started this project, I had to use Code Institutes template to be able to deploy it in Heroku and save all files that is secret in an gitignore file that came along the template. 
+Then I used Gitpod IDE to bult this project and saved it with **git add**, **git commit** and then pushed it to github with the command **gitpush**. 
+For saving code from django, I need to save it by the commands **python3 manage.py makemigrations** and then **python3 manage.py migrate** before I push the code to github and to finally deploy the project to Heroku.
+
+### Project deployment to Heroku
+1. Log in to my account at Heroku
+2. Select "new" and "Create new app" from the dashboard.
+3. Create a unique name for the project
+4. Navigate from the deploy tab at the top and select the setting tab.
+5. Because I use Code Institute template, I need to add a config var for creating this app. (Not necessary if you do not use the template)
+6. Select Reveal config vars button. In KEY field, input PORT with capital letters. In VALUE field, input 8000 and then select add button.
+7. Then add buildpacks below the config var section.
+Select Python as yout first bulid pack in buildpacks window and save that.
+8. Add another buildpack and add node.JS and save. The order of the buildpacks is importent to be Python at the top and node.JS at the bottom.
+9. Select the deploy tab again and go to the deployment method section.
+10. Select GitHub - connect to GitHub button and follow the steps to connect to your GitHub account.
+11. Select your account and enter the name of yout repository and then select search.
+12. When Heroku has find your repository select connect to connect the repository to the app within Heroku.
+13. Below App connected section, I choose to manual deployments options further down.
+14. When that is done correctly this will provide me the live link for this programe.
+15. Then I choose Automatic Deploys button that will automatically rebuild the app everytime you add, commit and push from GitPod.
+
+
 # Credits
+* [Django Documentation](https://docs.djangoproject.com/en/4.0/) - I used alot of help to understand django and find solutions for my problems from the django documentation for this project!
+
+* I also used very much help from the Django- I Think Therefore I Blog, walkthough project to start the project and fore some ideas how to do with the comments and likes.
+
+* [This](https://www.youtube.com/watch?v=dIcCi2SG1CU) tutorial helped me with the search problem and how to implement ajax and jquery for it.
+
+* [Following system](https://itsvinayak.hashnode.dev/creating-a-follow-and-unfollow-system-in-django) - Using help from this tutorial how to manage the following system.
+
+* [One tutorial for messages](https://www.youtube.com/watch?v=j1voZAmVw9I&t=648s)
+[Another for private messages](https://www.youtube.com/watch?v=oxrQdZ5KqW0) - Using help from this two tutorials for making the private message function.
+
+* All the images that i used is my own or users uploaded photos.
+
 # Acknowledgements
+This project has gone very well to work with. I have seldom encountered the same challenges as in the previous projects. However, the biggest challenge this time was to try to get the time together. This autumn and winter has been full of illnesses and children who have not been able to go to preschool due to the prevailing situation. The last week before the deadline I get covid and a few days the whole family gets it too which was less appropriate as I lost some time. But the positive thing was that my boyfriend got to be home and quarantined, which gave me useful time to put on the project and help taking care of the kids in the end!   
+I would also like to thank my mentor Richard Wells and the tutor team at Code Institue for all the help and support.
