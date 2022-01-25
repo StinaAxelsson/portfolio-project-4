@@ -93,26 +93,26 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ### Post model
 | Title      	| Key in Database   	| Form Validaton 	| Data Type       	|
 |------------	|-------------------	|----------------	|-----------------	|
-| body       	| post-body         	| max_length=500 	| TextField       	|
-| created_on 	| auto_now_add=True 	| None           	| DateTimeField    	|
-| author     	| User              	| None           	| ForeignKey      	|
-| upload     	| image             	| image          	| CloudinaryField 	|
+| body       	| body         	| max_length=500 	| TextField       	|
+| created_on 	| created_on 	| None           	| DateTimeField    	|
+| author     	| author              	| None           	| ForeignKey      	|
+| upload     	| upload             	| image          	| CloudinaryField 	|
 | likes      	| likes             	| None           	| ManytoManyField 	|
 ### Comment model
 | Title      	| Key in Database   	| Form Validaton 	| Data Type     	|
 |------------	|-------------------	|----------------	|---------------	|
 | comment    	| comment           	| max_length=500 	| TextField     	|
-| created_on 	| auto_now_add=True 	| None           	| DateTimeField 	|
-| author     	| User              	| None           	| ForeignKey    	|
-| post       	| Post              	| None           	| ForeignKey    	|
+| created_on 	| created_on 	| None           	| DateTimeField 	|
+| author     	| author              	| None           	| ForeignKey    	|
+| post       	| post              	| None           	| ForeignKey    	|
 ### Users (profile)
 | Title     	| Key in Database   	| Form Validaton          	| Data Type       	|
 |-----------	|-------------------	|-------------------------	|-----------------	|
-| User      	| User, primary_key 	| None                    	| OnetoOneField   	|
+| username      	| user 	| None                    	| OnetoOneField   	|
 | name      	| name              	| max_length=50           	| CharField       	|
-| picture   	| image             	| None                    	| CloudinaryField 	|
+| profile picture   	| picture             	| None                    	| CloudinaryField 	|
 | birthday  	| birthday          	| blank=True              	| DateField       	|
-| gender    	| choices=Gender()  	| default=Gender.other.id 	| IntegerField    	|
+| gender    	| gender  	| default=Gender.other.id 	| IntegerField    	|
 | location  	| location          	| max_length=100          	| CharField       	|
 | bio       	| bio               	| max_length=500          	| TextField       	|
 | followers 	| followers         	| User, blank=True        	| ManyToManyField 	|
@@ -132,18 +132,104 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 I have testing this project with manual testing. I have test i by myself during the development and once it was deployed, I got help by my family to improve and find bugs.
 ## Manual testing by user storys
 ### EPIC 1
-  - **As a user I can easy and safely register an account so that I can use my account for the websites purpose** 
-    - **Implementations**: Using and installing allauth for users registrations, login and logout, getting all the accounts template for this installing in my project to make sure this is safe and works.
-    - **Test**: I test this with first installing allauth, getting urls done and the templates, I try register and the account created, i use receive signals for register users for saving them without errors in database.
-    - **Result**: This test pass and works fine.
-  - **As a user I can use my email or username so that i can login with my account**
-    - **Implementations**: For this site, the users need their username to login.
-    - **Test**: Testing this by log in with the created account after logging out.
-    - **Result**: This test pass and works how it should.
-  - **As a user I can easy find where to register and create an account so that I can be a member and join the community**
-    - **Implementations**: From navbar i the header on the landind page you have all the options. And from the button on index file, and about us file. While logged in you can logout from navbar.
-    - **Test**: Testing this by put up options so its easy to find
-    - **Result**: This test pass and works how it should.
+**Implementations**: As a user I can easy and safely register an account so that I can use my account for the websites purpose.   
+**Test**: I test this with first installing allauth, getting urls done and the templates, I try register and the account created, i use receive signals for register users for saving them without errors in database.  
+**Result**: This test pass and works fine.  
+
+---
+**Implementations**: As a user I can use my email or username so that i can login with my account  
+**Test**: Testing this by log in with the created account after logging out, using the chosen username when registerd. Not using Email for this site.
+**Result**: This test pass and works how it should.
+
+---
+**Implementations**: As a user I can easy find where to register and create an account so that I can be a member and join the community  
+**Test**: During the site, there is options on the landingpage and about us page to register and login and in the menu in navbar.  
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can see all of the uploaded photos in a feed at the landingpage so that I can follow up what has been uploaded    
+**Test**: When user is logged in, there is a feed page for all the posts, the user have to upload something first or follow other users that have upload posts to see them in their personal feed.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can easy navigate through the site from anywhere I am on the site so that make it easier to use and do what I suppose to.      
+**Test**: User have access to the navbar menu from anywhere you are on the site, with options to upload, go to inbox, go to home/feed or search, go to orofile page or logout from the menu.    
+**Result**: This test pass and works how it should.   
+
+---
+### EPIC 2 Profile
+**Implementations**: As a user I can Edit my profile page, add/edit and delete pictures and information so that I can control what to share and make my profile more flexible.      
+**Test**: From users profile page you can click on every posts that i as a user have upload and from there delte, or edit a post.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can Add and change my profile image so that Other users can see who I am.      
+**Test**: From the profile page the user can edit its personal information and add and change a profile picture from the edit page.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can Add information in my biography about myself so that other users get to know me better by my profile page.      
+**Test**: This test is tested as the one abow, from the profile page you can edit your personal information to add a bio or edit/remove it.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can save all my posts in my page so that it is easy to view what I uploaded and to see what other users have shared on their profiles.      
+**Test**: When a user has uploaded a post, the post being shared on the feed and saved on the profile page automatic.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can choose to upload something from the homepage or from anywhere I am on the site so that I don't have to go back or forward to do that task.      
+**Test**: In the navigation bar on the top, there is a link for upload and you can click on it from anywhere on the site, and takes you to the uploading form and when you submit and upload the post, you get to the feed.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can like a photo from the feed so that the user who uploaded the post can see that I liked it.      
+**Test**: You can like the photo by click on the post for the detail page, then like it, but there is no notification or any way to see who has liked it.    
+**Result**: This test does not really pass, because it doesnt do exactly as the implementations, but it have a like function that works.   
+
+---
+**Implementations**: As a user I can make a comment /edit or delete it on a users post so that I can give feedback or discuss what users upload and regret if I want to change or remove it.      
+**Test**: As a user you can comment other users or your own posts, from the post detail page when you click on it. You can edit or delete you own comments too.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can edit or delete my own uploaded posts so that I can change something in my already uploaded post or delete if I regret uploading it.      
+**Test**: As a user i can click on my own post in the feed, or from my profile page so i see it in post detail view, and from there i have an edit button, and a delete button, to make changes in my post or delete it completely.      
+**Result**: This test pass.   
+
+---
+### EPIC 3 Search User
+**Implementations**: As a user I can search after other users by other username, name, location so that I can find other users in my location or find a user that I want to check out their profile page.      
+**Test**: As a user I can choose to click on search from navbar and search after other users by their username only, and not location or name.      
+**Result**: This test pass but it is not fully functional with all the search choises yet.   
+
+---
+**Implementations**: As a user I can Add a friend in a friend list, or followlist so that I can see what this person uploads easy and get in touch.      
+**Test**: When i as a user, visit other userse profile page i can choose to follow them by a button, and when i follow someone I can see what that user uploads in my own feed.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can unfollow or unfriend a user so that I can regret or if I follow by mistake can undo it.      
+**Test**: From a users profile page you can choose to follow or unfollow by a button with no problem.      
+**Result**: This test pass.   
+
+---
+### EPIC 4 Direct Messages
+**Implementations**: As a user I can Send a private message to an other user so that Its easy to start a conversation and speak to other users one by one.      
+**Test**: As a user i can go to my inbox, and from there search a user i want to start chat with and send messages to, or if i got an message i can go to that thread from my inbox too.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can get private messages from other users in a inbox so that I can sort and see where my messages goes and saves.      
+**Test**: All messages that been created from different users, is stored in threads in my inbox.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can Delete messages from my inbox so that I easy can clear my inbox and delete those who I don't want to save.      
+**Test**: As a user I can delete threads that i have in my inbox, and all the messages that have been sent to that user will be deltet for me.      
+**Result**: This test pass.   
+
+---
 
 ## Validator testing
 ## Bugs
