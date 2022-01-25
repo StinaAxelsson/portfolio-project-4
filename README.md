@@ -59,8 +59,11 @@ Utopi'Ally Community is a social media website, where you can register an accoun
 ## Structure
 * Landing page/start page for un authentical users.
 Showing some information of what the site is about, have an about us file and a login and register form.
+![]()
 * Landingpage for logged in users
   * Feed, when user sign up they are provide some information of how to upload, create more information in profile page, this text will dissapere when the user upload their first post or start follow users who have upload posts earlier.
+  ![]()
+  ![]()
 * Profile page
   * Personal page for the user, with fields of information to add about themself
   * Add profile image and edit profile.
@@ -146,7 +149,6 @@ I have testing this project with manual testing. I have test i by myself during 
     - **Result**: This test pass and works how it should.
 
 ## Validator testing
-## Manually test user storys
 ## Bugs
 # Deployment
 # Credits
