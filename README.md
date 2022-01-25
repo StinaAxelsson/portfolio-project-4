@@ -96,26 +96,26 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ### Post model
 | Title      	| Key in Database   	| Form Validaton 	| Data Type       	|
 |------------	|-------------------	|----------------	|-----------------	|
-| body       	| post-body         	| max_length=500 	| TextField       	|
-| created_on 	| auto_now_add=True 	| None           	| DateTimeField    	|
-| author     	| User              	| None           	| ForeignKey      	|
-| upload     	| image             	| image          	| CloudinaryField 	|
+| body       	| body         	| max_length=500 	| TextField       	|
+| created_on 	| created_on 	| None           	| DateTimeField    	|
+| author     	| author              	| None           	| ForeignKey      	|
+| upload     	| upload             	| image          	| CloudinaryField 	|
 | likes      	| likes             	| None           	| ManytoManyField 	|
 ### Comment model
 | Title      	| Key in Database   	| Form Validaton 	| Data Type     	|
 |------------	|-------------------	|----------------	|---------------	|
 | comment    	| comment           	| max_length=500 	| TextField     	|
-| created_on 	| auto_now_add=True 	| None           	| DateTimeField 	|
-| author     	| User              	| None           	| ForeignKey    	|
-| post       	| Post              	| None           	| ForeignKey    	|
+| created_on 	| created_on 	| None           	| DateTimeField 	|
+| author     	| author              	| None           	| ForeignKey    	|
+| post       	| post              	| None           	| ForeignKey    	|
 ### Users (profile)
 | Title     	| Key in Database   	| Form Validaton          	| Data Type       	|
 |-----------	|-------------------	|-------------------------	|-----------------	|
-| User      	| User, primary_key 	| None                    	| OnetoOneField   	|
+| username      	| user 	| None                    	| OnetoOneField   	|
 | name      	| name              	| max_length=50           	| CharField       	|
-| picture   	| image             	| None                    	| CloudinaryField 	|
+| profile picture   	| picture             	| None                    	| CloudinaryField 	|
 | birthday  	| birthday          	| blank=True              	| DateField       	|
-| gender    	| choices=Gender()  	| default=Gender.other.id 	| IntegerField    	|
+| gender    	| gender  	| default=Gender.other.id 	| IntegerField    	|
 | location  	| location          	| max_length=100          	| CharField       	|
 | bio       	| bio               	| max_length=500          	| TextField       	|
 | followers 	| followers         	| User, blank=True        	| ManyToManyField 	|
@@ -130,26 +130,174 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 ## Frameworks
 * Django
 * Bootstrap
+* Jquery
 ## Other programmes
+* [Heroku](https://id.heroku.com/login) - Deploy my site
+* [Pep8](http://pep8online.com/) - Validate python code
+* [Gitpod](https://gitpod.io/workspaces) - My workspace 
+* [GitHub](https://github.com/) - Make my repository and save my user storys and code.
+* [Am I responsive](http://ami.responsivedesign.is/) - Fix the photo for the readme
+* [Balsamiq](https://balsamiq.com/) - Make my wireframes
+* [Font Awsome](https://fontawesome.com/) - Got all the icons for the site
+* [Google Fonts](https://fonts.google.com/) - Got my fonts
+* [W3C Validator](https://jigsaw.w3.org/css-validator/validator.html.en) - Validate CSS and HTML
+* [JShint](https://jshint.com/)
+* [Markdown table generator](https://www.tablesgenerator.com/markdown_tables#) - Help with generate my tables for the readme
+* [Color palett generator](https://coolors.co/) - Make my palette of colors
+* Chrome Devtools - Fins issues, bugs and errors during the development on the liveserver.
+* [Cloudinary](https://cloudinary.com/) - Store all the static images that users upload on the site.
 # Testing
 I have testing this project with manual testing. I have test i by myself during the development and once it was deployed, I got help by my family to improve and find bugs.
 ## Manual testing by user storys
 ### EPIC 1
-  - **As a user I can easy and safely register an account so that I can use my account for the websites purpose** 
-    - **Implementations**: Using and installing allauth for users registrations, login and logout, getting all the accounts template for this installing in my project to make sure this is safe and works.
-    - **Test**: I test this with first installing allauth, getting urls done and the templates, I try register and the account created, i use receive signals for register users for saving them without errors in database.
-    - **Result**: This test pass and works fine.
-  - **As a user I can use my email or username so that i can login with my account**
-    - **Implementations**: For this site, the users need their username to login.
-    - **Test**: Testing this by log in with the created account after logging out.
-    - **Result**: This test pass and works how it should.
-  - **As a user I can easy find where to register and create an account so that I can be a member and join the community**
-    - **Implementations**: From navbar i the header on the landind page you have all the options. And from the button on index file, and about us file. While logged in you can logout from navbar.
-    - **Test**: Testing this by put up options so its easy to find
-    - **Result**: This test pass and works how it should.
+**Implementations**: As a user I can easy and safely register an account so that I can use my account for the websites purpose.   
+**Test**: I test this with first installing allauth, getting urls done and the templates, I try register and the account created, i use receive signals for register users for saving them without errors in database.  
+**Result**: This test pass and works fine.  
+
+---
+**Implementations**: As a user I can use my email or username so that i can login with my account  
+**Test**: Testing this by log in with the created account after logging out, using the chosen username when registerd. Not using Email for this site.
+**Result**: This test pass and works how it should.
+
+---
+**Implementations**: As a user I can easy find where to register and create an account so that I can be a member and join the community  
+**Test**: During the site, there is options on the landingpage and about us page to register and login and in the menu in navbar.  
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can see all of the uploaded photos in a feed at the landingpage so that I can follow up what has been uploaded    
+**Test**: When user is logged in, there is a feed page for all the posts, the user have to upload something first or follow other users that have upload posts to see them in their personal feed.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can easy navigate through the site from anywhere I am on the site so that make it easier to use and do what I suppose to.      
+**Test**: User have access to the navbar menu from anywhere you are on the site, with options to upload, go to inbox, go to home/feed or search, go to orofile page or logout from the menu.    
+**Result**: This test pass and works how it should.   
+
+---
+### EPIC 2 Profile
+**Implementations**: As a user I can Edit my profile page, add/edit and delete pictures and information so that I can control what to share and make my profile more flexible.      
+**Test**: From users profile page you can click on every posts that i as a user have upload and from there delte, or edit a post.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can Add and change my profile image so that Other users can see who I am.      
+**Test**: From the profile page the user can edit its personal information and add and change a profile picture from the edit page.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can Add information in my biography about myself so that other users get to know me better by my profile page.      
+**Test**: This test is tested as the one abow, from the profile page you can edit your personal information to add a bio or edit/remove it.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can save all my posts in my page so that it is easy to view what I uploaded and to see what other users have shared on their profiles.      
+**Test**: When a user has uploaded a post, the post being shared on the feed and saved on the profile page automatic.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can choose to upload something from the homepage or from anywhere I am on the site so that I don't have to go back or forward to do that task.      
+**Test**: In the navigation bar on the top, there is a link for upload and you can click on it from anywhere on the site, and takes you to the uploading form and when you submit and upload the post, you get to the feed.    
+**Result**: This test pass and works how it should.   
+
+---
+**Implementations**: As a user I can like a photo from the feed so that the user who uploaded the post can see that I liked it.      
+**Test**: You can like the photo by click on the post for the detail page, then like it, but there is no notification or any way to see who has liked it.    
+**Result**: This test does not really pass, because it doesnt do exactly as the implementations, but it have a like function that works.   
+
+---
+**Implementations**: As a user I can make a comment /edit or delete it on a users post so that I can give feedback or discuss what users upload and regret if I want to change or remove it.      
+**Test**: As a user you can comment other users or your own posts, from the post detail page when you click on it. You can edit or delete you own comments too.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can edit or delete my own uploaded posts so that I can change something in my already uploaded post or delete if I regret uploading it.      
+**Test**: As a user i can click on my own post in the feed, or from my profile page so i see it in post detail view, and from there i have an edit button, and a delete button, to make changes in my post or delete it completely.      
+**Result**: This test pass.   
+
+---
+### EPIC 3 Search User
+**Implementations**: As a user I can search after other users by other username, name, location so that I can find other users in my location or find a user that I want to check out their profile page.      
+**Test**: As a user I can choose to click on search from navbar and search after other users by their username only, and not location or name.      
+**Result**: This test pass but it is not fully functional with all the search choises yet.   
+
+---
+**Implementations**: As a user I can Add a friend in a friend list, or followlist so that I can see what this person uploads easy and get in touch.      
+**Test**: When i as a user, visit other userse profile page i can choose to follow them by a button, and when i follow someone I can see what that user uploads in my own feed.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can unfollow or unfriend a user so that I can regret or if I follow by mistake can undo it.      
+**Test**: From a users profile page you can choose to follow or unfollow by a button with no problem.      
+**Result**: This test pass.   
+
+---
+### EPIC 4 Direct Messages
+**Implementations**: As a user I can Send a private message to an other user so that Its easy to start a conversation and speak to other users one by one.      
+**Test**: As a user i can go to my inbox, and from there search a user i want to start chat with and send messages to, or if i got an message i can go to that thread from my inbox too.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can get private messages from other users in a inbox so that I can sort and see where my messages goes and saves.      
+**Test**: All messages that been created from different users, is stored in threads in my inbox.      
+**Result**: This test pass.   
+
+---
+**Implementations**: As a user I can Delete messages from my inbox so that I easy can clear my inbox and delete those who I don't want to save.      
+**Test**: As a user I can delete threads that i have in my inbox, and all the messages that have been sent to that user will be deltet for me.      
+**Result**: This test pass.   
+
+---
 
 ## Validator testing
 ## Bugs
+During the development of this project, I got alot of bugs and errors. Some of them was easy to fix by just read what the error message that telling me what is wrong. Small errors like indent problems, forgot to import something from views, models or urls, spelling errors in the variables etc.
+Then I got bigger issues and errors that I had more problem to solve. some of them I solved after searching through the entire internet and found good answers in eg stackoverflow and similar forums. Some problems I had to get help from tutor support who has helped me solve some of the biggest bugs during the project.
+
+One of the bigger issues I got was to get the private messages function to work. I got alot of problem with both the templates, views and urls. From the beginning I wantet the inbox, search for user to chat with, and the messages thread to be all at the same template, like a e-mail structure. But that caused so many problem and it did'nt want to work well. I asked for help from the tutor team and they got me on the right track, and then I got alot of help from my mentor. But I finally manage to fix the problem by just add two more templates and divide the code into three parts, so you have the inbox for its own, then the search part on its own and then the chat box on its own, and it looked much better in on both desktop view and above all the phone view. And it worked fine!
+
+Another bug that has given me problems is the search field. I first had them as a separate file and search from the template, but did not manage to hide the search result before I tried to search. So I changed so that I had the search box up in the navbar and then it worked well! On the other hand, I wanted them in my own template as my first plan was and therefore I redid them and had to use javascript to make it work the way I wanted. I received good help from the tutor team to lead me in the right direction on this too.
+
+Other bugs was to write right variables in the templates and then to fix the static files to show when deployed the project to Heroku and realised that i had to change debug=true til False!
+
 # Deployment
+When I started this project, I had to use Code Institutes template to be able to deploy it in Heroku and save all files that is secret in an gitignore file that came along the template. 
+Then I used Gitpod IDE to bult this project and saved it with **git add**, **git commit** and then pushed it to github with the command **gitpush**. 
+For saving code from django, I need to save it by the commands **python3 manage.py makemigrations** and then **python3 manage.py migrate** before I push the code to github and to finally deploy the project to Heroku.
+
+### Project deployment to Heroku
+1. Log in to my account at Heroku
+2. Select "new" and "Create new app" from the dashboard.
+3. Create a unique name for the project
+4. Navigate from the deploy tab at the top and select the setting tab.
+5. Because I use Code Institute template, I need to add a config var for creating this app. (Not necessary if you do not use the template)
+6. Select Reveal config vars button. In KEY field, input PORT with capital letters. In VALUE field, input 8000 and then select add button.
+7. Then add buildpacks below the config var section.
+Select Python as yout first bulid pack in buildpacks window and save that.
+8. Add another buildpack and add node.JS and save. The order of the buildpacks is importent to be Python at the top and node.JS at the bottom.
+9. Select the deploy tab again and go to the deployment method section.
+10. Select GitHub - connect to GitHub button and follow the steps to connect to your GitHub account.
+11. Select your account and enter the name of yout repository and then select search.
+12. When Heroku has find your repository select connect to connect the repository to the app within Heroku.
+13. Below App connected section, I choose to manual deployments options further down.
+14. When that is done correctly this will provide me the live link for this programe.
+15. Then I choose Automatic Deploys button that will automatically rebuild the app everytime you add, commit and push from GitPod.
+
+
 # Credits
+* [Django Documentation](https://docs.djangoproject.com/en/4.0/) - I used alot of help to understand django and find solutions for my problems from the django documentation for this project!
+
+* I also used very much help from the Django- I Think Therefore I Blog, walkthough project to start the project and fore some ideas how to do with the comments and likes.
+
+* [This](https://www.youtube.com/watch?v=dIcCi2SG1CU) tutorial helped me with the search problem and how to implement ajax and jquery for it.
+
+* [Following system](https://itsvinayak.hashnode.dev/creating-a-follow-and-unfollow-system-in-django) - Using help from this tutorial how to manage the following system.
+
+* [One tutorial for messages](https://www.youtube.com/watch?v=j1voZAmVw9I&t=648s)
+[Another for private messages](https://www.youtube.com/watch?v=oxrQdZ5KqW0) - Using help from this two tutorials for making the private message function.
+
+* All the images that i used is my own or users uploaded photos.
+
 # Acknowledgements
+This project has gone very well to work with. I have seldom encountered the same challenges as in the previous projects. However, the biggest challenge this time was to try to get the time together. This autumn and winter has been full of illnesses and children who have not been able to go to preschool due to the prevailing situation. The last week before the deadline I get covid and a few days the whole family gets it too which was less appropriate as I lost some time. But the positive thing was that my boyfriend got to be home and quarantined, which gave me useful time to put on the project and help taking care of the kids in the end!   
+I would also like to thank my mentor Richard Wells and the tutor team at Code Institue for all the help and support.
