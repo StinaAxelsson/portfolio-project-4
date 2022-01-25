@@ -7,6 +7,10 @@ from django.http import JsonResponse
 
 
 class Search(ListView):
+    """
+    View for search template and run
+    when user search.
+    """
     def get(self, request, *args, **kwargs):
         return render(request, 'search_users.html')
 

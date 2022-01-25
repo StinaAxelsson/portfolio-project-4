@@ -125,7 +125,7 @@ class PostEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     to the post detail template when user has submit the edit.
     """
     model = Post
-    fields = ['body']
+    fields = ['body', 'upload']
     template_name = 'post_edit.html'
 
     def get_success_url(self):
