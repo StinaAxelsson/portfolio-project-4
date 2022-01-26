@@ -1,31 +1,33 @@
 **Author:** Stina Axelsson
 
+Final deployed link [UtopiAlly Community](https://utopially-community.herokuapp.com/)
+
 # Project Description
 This project is developed as my 4th portfolio project during my course at Code Institute and I call it Utopi'Ally Community.
 Utopi'Ally Community is a social media website, where you can register an account, login and create a user profile. You can upload posts with text and images on a feed for others to like and comment. You can follow other users and get along with them in a private chat. It is a small and friendly community for spiritual awaken people that want to find friends with the same interests.
  
 # Content
-* [Project Description]()
-* [UX]()
-  * [User Stories]()
-  * [Site Owner Goals]()
-  * [Structure]()
-  * [Wireframes]()
-* [Features]()
-  * [Existing Features]()
-  * [Data storage]()
-  * [Features Left To Implement]()
-* [Technologies Used]()
-  * [Languages]()
-  * [Frameworks]()
-  * [Other Programmes]()
-* [Testing]()
-  * [Validator Testing]()
-  * [Manually test user storys]()
-  * [Bugs]()
-* [Deployment]()
-* [Credits]()
-* [Ackmowledgements]()
+* [Project Description](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
+* [UX](https://github.com/StinaAxelsson/portfolio-project-4#ux)
+  * [User Stories](https://github.com/StinaAxelsson/portfolio-project-4#user-stories)
+  * [Site Owner Goals](https://github.com/StinaAxelsson/portfolio-project-4#site-owner-goals)
+  * [Structure](https://github.com/StinaAxelsson/portfolio-project-4#structure)
+  * [Wireframes](https://github.com/StinaAxelsson/portfolio-project-4#wireframes)
+* [Features](https://github.com/StinaAxelsson/portfolio-project-4#features)
+  * [Data storage](https://github.com/StinaAxelsson/portfolio-project-4#data-storage)
+  * [Existing Features](https://github.com/StinaAxelsson/portfolio-project-4#existing-features)
+  * [Features Left To Implement](https://github.com/StinaAxelsson/portfolio-project-4#features-left-to-implement)
+* [Technologies Used](https://github.com/StinaAxelsson/portfolio-project-4#technologies-used)
+  * [Languages](https://github.com/StinaAxelsson/portfolio-project-4#languages)
+  * [Frameworks](https://github.com/StinaAxelsson/portfolio-project-4#frameworks)
+  * [Other Programmes](https://github.com/StinaAxelsson/portfolio-project-4#other-programmes)
+* [Testing](https://github.com/StinaAxelsson/portfolio-project-4#testing)
+  * [Manually test user storys](https://github.com/StinaAxelsson/portfolio-project-4#manual-testing-by-user-storys)
+  * [Validator Testing](https://github.com/StinaAxelsson/portfolio-project-4#validator-testing)
+  * [Bugs](https://github.com/StinaAxelsson/portfolio-project-4#bugs)
+* [Deployment](https://github.com/StinaAxelsson/portfolio-project-4#deployment)
+* [Credits](https://github.com/StinaAxelsson/portfolio-project-4#credits)
+* [Ackmowledgements](https://github.com/StinaAxelsson/portfolio-project-4#acknowledgements)
 # UX
 ## User Stories
 ### EPIC 1 Setup
@@ -54,8 +56,15 @@ Utopi'Ally Community is a social media website, where you can register an accoun
 * As a user I can get private messages from other users in a inbox so that I can sort and see where my messages goes and saves
 * As a user I can Delete messages from my inbox so that I easy can clear my inbox and delete those who I don't want to save
 
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 
 ## Site owner goals
+* As a site owner my goals is to create a website that is easy to understand and look interesting to know more about.
+* Follows great structure and using nice colours and fonts though the site.
+* Have features that users want to use and meet the ux from similar sites that users is comfortable with.
+* I want users to stay, and visit site more than once and use it for the purpose.
+* HAve a site that works great without many errors.
+
 ## Structure
 * Landing page/start page for un authentical users.
 Showing some information of what the site is about, have an about us file and a login and register form.  
@@ -95,6 +104,8 @@ Showing some information of what the site is about, have an about us file and a 
 * Footer
   * contains links to site owners social media  
   ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/footer.png)
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 ## Design Choises
 ### Fonts
 I have two main fonts from Google Fonts. 
@@ -102,6 +113,8 @@ I have two main fonts from Google Fonts.
 ### Colours
 ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/colours.png)
 Main colour is white, with details as in navbar and footer with the gradiant mix of #A6BFFF and #A4EAC0 and for all the buttons on the page. The #F7BAF0 is used for smaller details and some hover colours and the receivers chat bubble. The colours combine is soft, beautifyl and gives the impression that i seeking for in the theme of the site.
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 ## Wireframes
 I have been following the structure from the wireframes, with some changes for message and the notifications that i chose to not go with on this project for the lack of time and knowledge for that.
 * [Desktop](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/wireframes/browser%20wireframes.pdf)
@@ -135,27 +148,45 @@ I have been following the structure from the wireframes, with some changes for m
 | location  	| location          	| max_length=100          	| CharField       	|
 | bio       	| bio               	| max_length=500          	| TextField       	|
 | followers 	| followers         	| User, blank=True        	| ManyToManyField 	|
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 ## Existing features
 * Create an account
+  - Using Register from navigationbar
 * Login as existing user
+  - Login from navigationbar in the start page
 * Add information on an profile page
+  - When logged in, you can add profile page and more information about you
 * Upload texts and images saved on the profile page
+  - You can upload posts that automatic saves in your profile page and uploads in the feed.
 * Share posts with other users 
+  - Post that uploads shares with users that follows you.
 * Follow or unfollow other users 
+  - You can follow other by clicking on follow button in their profile page
 * Edit profile page
+  - You can edit your profile information and change profile image
 * Like and comment other posts 
+  - When click on the post, you get more information and can like and comment it from the detail view.
 * Edit or delete posts
+  - You can also edit and delete your own posts in the detail view
 * Delete comments
+  - Comments that you have made can be deleted
 * Send private messages to other users
+  - You can message other existing users and receive message from other users.
 * Delete threads from inbox
+  - Threads that have been made in the inbox can be deleted
 * search for other users by username
+  - In the search part you can search for other users and the search field will show all users containing the letters you write.
 * Visit other users profile pages
+  - You can visit other user by their posts in the feed, comment section or search.
 
 ## Features left to implement
 Features I want to implement in future for this project is
 * Notifications for when users get new followers, likes or comments
 and for messages. This feature is something I want to add for expand the users experiance for a social media site!
 * To see a list of the users that follows you, or follow other users.
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 # Technologies used
 ## Languages
 * HTML5
@@ -166,12 +197,12 @@ and for messages. This feature is something I want to add for expand the users e
 * Django
 * Bootstrap
 * Jquery
+* PostgreSQL
 ## Other programmes
 * [Heroku](https://id.heroku.com/login) - Deploy my site
 * [Pep8](http://pep8online.com/) - Validate python code
 * [Gitpod](https://gitpod.io/workspaces) - My workspace 
 * [GitHub](https://github.com/) - Make my repository and save my user storys and code.
-* [Am I responsive](http://ami.responsivedesign.is/) - Fix the photo for the readme
 * [Balsamiq](https://balsamiq.com/) - Make my wireframes
 * [Font Awsome](https://fontawesome.com/) - Got all the icons for the site
 * [Google Fonts](https://fonts.google.com/) - Got my fonts
@@ -181,6 +212,8 @@ and for messages. This feature is something I want to add for expand the users e
 * [Color palett generator](https://coolors.co/) - Make my palette of colors
 * Chrome Devtools - Fins issues, bugs and errors during the development on the liveserver.
 * [Cloudinary](https://cloudinary.com/) - Store all the static images that users upload on the site.
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 # Testing
 I have testing this project with manual testing. I have test i by myself during the development and once it was deployed, I got help by my family to improve and find bugs.
 ## Manual testing by user storys
@@ -283,6 +316,7 @@ I have testing this project with manual testing. I have test i by myself during 
 **Result**: This test pass.   
 
 ---
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 
 ## Validator testing
 ### CSS
@@ -307,6 +341,7 @@ All pages on the deployed site was validate and pass without errors in W3C Valid
 All python code was tested and validate in PEP8 Validator without errors
 ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/pep8_mainview.png)
 
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 ## Bugs
 During the development of this project, I got alot of bugs and errors. Some of them was easy to fix by just read what the error message that telling me what is wrong. Small errors like indent problems, forgot to import something from views, models or urls, spelling errors in the variables etc.
 Then I got bigger issues and errors that I had more problem to solve. some of them I solved after searching through the entire internet and found good answers in eg stackoverflow and similar forums. Some problems I had to get help from tutor support who has helped me solve some of the biggest bugs during the project.
@@ -318,6 +353,8 @@ Another bug that has given me problems is the search field. I first had them as 
 ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/search_error3.png)
 
 Other bugs was to write right variables in the templates and then to fix the static files to show when deployed the project to Heroku and realised that i had to change debug=true til False!
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 
 # Deployment
 When I started this project, I had to use Code Institutes template to be able to deploy it in Heroku and save all files that is secret in an gitignore file that came along the template. 
@@ -340,7 +377,7 @@ Select Python as yout first bulid pack in buildpacks window and save that.
 14. When that is done correctly this will provide me the live link for this programe.
 15. Then I choose Automatic Deploys button that will automatically rebuild the app everytime you add, commit and push from GitPod.
 
-
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
 # Credits
 * [Django Documentation](https://docs.djangoproject.com/en/4.0/) - I used alot of help to understand django and find solutions for my problems from the django documentation for this project!
 
@@ -364,3 +401,5 @@ Select Python as yout first bulid pack in buildpacks window and save that.
 # Acknowledgements
 This project has gone very well to work with. I have seldom encountered the same challenges as in the previous projects. However, the biggest challenge this time was to try to get the time together. This autumn and winter has been full of illnesses and children who have not been able to go to preschool due to the prevailing situation. The last week before the deadline I get covid and a few days the whole family gets it too which was less appropriate as I lost some time. But the positive thing was that my boyfriend got to be home and quarantined, which gave me useful time to put on the project and help taking care of the kids in the end!   
 I would also like to thank my mentor Richard Wells and the tutor team at Code Institue for all the help and support.
+
+[Back to top](https://github.com/StinaAxelsson/portfolio-project-4#project-description)
