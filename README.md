@@ -285,6 +285,28 @@ I have testing this project with manual testing. I have test i by myself during 
 ---
 
 ## Validator testing
+### CSS
+Css code pass without errors in w3C validator for CSS
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/CSS%20validator.png)
+
+### Javascript
+Pass without error in JSHint Validator 
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/JShint%20validate.png)
+
+### HTML
+All pages on the deployed site was validate and pass without errors in W3C Validator. Two of the sites (inbox holding threads and profile page) did not pass and gave an 500 error. I got help from tutors team and the reason it gave error was for the information of the page is for logged in users to see and private. The code in general was tested and pass. And the pages works fine in browser too.
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_feed.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_index.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_postdetail.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_search.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_searchchat.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_upload.png)
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/validate_profile.png)
+
+### Python
+All python code was tested and validate in PEP8 Validator without errors
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/pep8_mainview.png)
+
 ## Bugs
 During the development of this project, I got alot of bugs and errors. Some of them was easy to fix by just read what the error message that telling me what is wrong. Small errors like indent problems, forgot to import something from views, models or urls, spelling errors in the variables etc.
 Then I got bigger issues and errors that I had more problem to solve. some of them I solved after searching through the entire internet and found good answers in eg stackoverflow and similar forums. Some problems I had to get help from tutor support who has helped me solve some of the biggest bugs during the project.
@@ -309,12 +331,10 @@ For saving code from django, I need to save it by the commands **python3 manage.
 4. Navigate from the deploy tab at the top and select the setting tab.
 5. Because I use Code Institute template, I need to add a config var for creating this app. (Not necessary if you do not use the template)
 6. Select Reveal config vars button. In KEY field, input PORT with capital letters. In VALUE field, input 8000 and then select add button.
-7. Then add buildpacks below the config var section.
 Select Python as yout first bulid pack in buildpacks window and save that.
-8. Add another buildpack and add node.JS and save. The order of the buildpacks is importent to be Python at the top and node.JS at the bottom.
 9. Select the deploy tab again and go to the deployment method section.
 10. Select GitHub - connect to GitHub button and follow the steps to connect to your GitHub account.
-11. Select your account and enter the name of yout repository and then select search.
+11. Select your account and enter the name of your repository and then select search.
 12. When Heroku has find your repository select connect to connect the repository to the app within Heroku.
 13. Below App connected section, I choose to manual deployments options further down.
 14. When that is done correctly this will provide me the live link for this programe.
@@ -324,11 +344,17 @@ Select Python as yout first bulid pack in buildpacks window and save that.
 # Credits
 * [Django Documentation](https://docs.djangoproject.com/en/4.0/) - I used alot of help to understand django and find solutions for my problems from the django documentation for this project!
 
-* I also used very much help from the Django- I Think Therefore I Blog, walkthough project to start the project and fore some ideas how to do with the comments and likes.
+* I also used very much help from the Django- I Think Therefore I Blog, walkthough project to start the project and fore some ideas how to do with the comments and likes and to start the project, helped me with the basic structure.
+
+* [Receiver/signals](https://www.codeunderscored.com/signals-in-django/) - using receiver when create new users to not get errors.
 
 * [This](https://www.youtube.com/watch?v=dIcCi2SG1CU) tutorial helped me with the search problem and how to implement ajax and jquery for it.
 
+* [Help with how to upload all images and static](https://www.geeksforgeeks.org/python-uploading-images-in-django/)
+
 * [Following system](https://itsvinayak.hashnode.dev/creating-a-follow-and-unfollow-system-in-django) - Using help from this tutorial how to manage the following system.
+
+* [See followers post in feed](https://stackoverflow.com/questions/55675757/django-queryset-for-getting-feeds-from-following-users)
 
 * [One tutorial for messages](https://www.youtube.com/watch?v=j1voZAmVw9I&t=648s)
 [Another for private messages](https://www.youtube.com/watch?v=oxrQdZ5KqW0) - Using help from this two tutorials for making the private message function.

@@ -96,9 +96,9 @@
                 </div>
                 <div class="m-3">
                     {% if "placeholder" in post.author.profile.picture.url %}
-                    <img class="rounded-circle" width="30" heigh="30" src="{% static 'image/default_profile.png' %}" />
+                    <img class="rounded-circle" width="30" heigh="30" src="{% static 'image/default_profile.png' %}" alt="profile-image" />
                     {% else %}
-                    <img class="rounded-circle" height="30" width="30" src="{{ post.author.profile.picture.url }}" />
+                    <img class="rounded-circle" height="30" width="30" src="{{ post.author.profile.picture.url }}" alt="profile-image" />
                     {% endif %}
                     <a class="feed-username" href="{% url 'profile' post.author.profile.pk %}">{{ post.author }}</a>
                 </div>
