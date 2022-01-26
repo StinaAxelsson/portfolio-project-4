@@ -103,6 +103,10 @@ I have two main fonts from Google Fonts.
 ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/colours.png)
 Main colour is white, with details as in navbar and footer with the gradiant mix of #A6BFFF and #A4EAC0 and for all the buttons on the page. The #F7BAF0 is used for smaller details and some hover colours and the receivers chat bubble. The colours combine is soft, beautifyl and gives the impression that i seeking for in the theme of the site.
 ## Wireframes
+I have been following the structure from the wireframes, with some changes for message and the notifications that i chose to not go with on this project for the lack of time and knowledge for that.
+* [Desktop](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/wireframes/browser%20wireframes.pdf)
+* [Tablet](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/wireframes/Tablet%20wireframes.pdf)
+* [Mobile](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/wireframes/Mobile%20wireframes.pdf)
 # Features
 ## Data storage
 ### Post model
@@ -132,7 +136,26 @@ Main colour is white, with details as in navbar and footer with the gradiant mix
 | bio       	| bio               	| max_length=500          	| TextField       	|
 | followers 	| followers         	| User, blank=True        	| ManyToManyField 	|
 ## Existing features
+* Create an account
+* Login as existing user
+* Add information on an profile page
+* Upload texts and images saved on the profile page
+* Share posts with other users 
+* Follow or unfollow other users 
+* Edit profile page
+* Like and comment other posts 
+* Edit or delete posts
+* Delete comments
+* Send private messages to other users
+* Delete threads from inbox
+* search for other users by username
+* Visit other users profile pages
+
 ## Features left to implement
+Features I want to implement in future for this project is
+* Notifications for when users get new followers, likes or comments
+and for messages. This feature is something I want to add for expand the users experiance for a social media site!
+* To see a list of the users that follows you, or follow other users.
 # Technologies used
 ## Languages
 * HTML5
@@ -266,16 +289,18 @@ I have testing this project with manual testing. I have test i by myself during 
 During the development of this project, I got alot of bugs and errors. Some of them was easy to fix by just read what the error message that telling me what is wrong. Small errors like indent problems, forgot to import something from views, models or urls, spelling errors in the variables etc.
 Then I got bigger issues and errors that I had more problem to solve. some of them I solved after searching through the entire internet and found good answers in eg stackoverflow and similar forums. Some problems I had to get help from tutor support who has helped me solve some of the biggest bugs during the project.
 
-One of the bigger issues I got was to get the private messages function to work. I got alot of problem with both the templates, views and urls. From the beginning I wantet the inbox, search for user to chat with, and the messages thread to be all at the same template, like a e-mail structure. But that caused so many problem and it did'nt want to work well. I asked for help from the tutor team and they got me on the right track, and then I got alot of help from my mentor. But I finally manage to fix the problem by just add two more templates and divide the code into three parts, so you have the inbox for its own, then the search part on its own and then the chat box on its own, and it looked much better in on both desktop view and above all the phone view. And it worked fine!
+One of the bigger issues I got was to get the private messages function to work. I got alot of problem with both the templates, views and urls. From the beginning I wantet the inbox, search for user to chat with, and the messages thread to be all at the same template, like a e-mail structure. But that caused so many problem and it did'nt want to work well. I asked for help from the tutor team and they got me on the right track, and then I got alot of help from my mentor. But I finally manage to fix the problem by just add two more templates and divide the code into three parts, so you have the inbox for its own, then the search part on its own and then the chat box on its own, and it looked much better in on both desktop view and above all the phone view. And it worked fine!  
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/inbox%20search%20error.png)
 
-Another bug that has given me problems is the search field. I first had them as a separate file and search from the template, but did not manage to hide the search result before I tried to search. So I changed so that I had the search box up in the navbar and then it worked well! On the other hand, I wanted them in my own template as my first plan was and therefore I redid them and had to use javascript to make it work the way I wanted. I received good help from the tutor team to lead me in the right direction on this too.
+Another bug that has given me problems is the search field. I first had them as a separate file and search from the template, but did not manage to hide the search result before I tried to search. So I changed so that I had the search box up in the navbar and then it worked well! On the other hand, I wanted them in my own template as my first plan was and therefore I redid them and had to use javascript to make it work the way I wanted. I received good help from the tutor team to lead me in the right direction on this too.  
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/search_error3.png)
 
 Other bugs was to write right variables in the templates and then to fix the static files to show when deployed the project to Heroku and realised that i had to change debug=true til False!
 
 # Deployment
 When I started this project, I had to use Code Institutes template to be able to deploy it in Heroku and save all files that is secret in an gitignore file that came along the template. 
 Then I used Gitpod IDE to bult this project and saved it with **git add**, **git commit** and then pushed it to github with the command **gitpush**. 
-For saving code from django, I need to save it by the commands **python3 manage.py makemigrations** and then **python3 manage.py migrate** before I push the code to github and to finally deploy the project to Heroku.
+For saving code from django, I need to save it by the commands **python3 manage.py makemigrations** and then **python3 manage.py migrate** before I push the code to github and to finally deploy the project to Heroku. And the last step set the Debug to False in my app setting in django to get all the static files to show on the final deployment.
 
 ### Project deployment to Heroku
 1. Log in to my account at Heroku
