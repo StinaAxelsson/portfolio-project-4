@@ -58,31 +58,43 @@ Utopi'Ally Community is a social media website, where you can register an accoun
 ## Site owner goals
 ## Structure
 * Landing page/start page for un authentical users.
-Showing some information of what the site is about, have an about us file and a login and register form.
-![]()
+Showing some information of what the site is about, have an about us file and a login and register form.  
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/landindpage.png)  
+![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/start%20menu.png)
 * Landingpage for logged in users
-  * Feed, when user sign up they are provide some information of how to upload, create more information in profile page, this text will dissapere when the user upload their first post or start follow users who have upload posts earlier.
-  ![]()
-  ![]()
+  * Feed, when user sign up they are provide some information of how to upload, create more information in profile page, this text will dissapere when the user upload their first post or start follow users who have upload posts earlier.  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/landing%20for%20new%20register.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/nav%20bar%20logged%20in.png)
 * Profile page
   * Personal page for the user, with fields of information to add about themself
   * Add profile image and edit profile.
   * See how many followers (moon friends) they have and a button to follow or unfollow other users.
-  * Uploaded posts that the user have is collected on their own pages.
+  * Uploaded posts that the user have is collected on their own pages.  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/profile%20page.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/edit%20profile.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/all%20post%20on%20profile.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/follow%20button.png)
 * Inbox
   * An inbox that collect all active threads
   * Start a new chat and search for user to start chat with
-  * The conversation/chat with send and received messages
+  * The conversation/chat with send and received messages  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/inbox.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/search%20chat.png)
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/conversation%20inbox.png)
 * Search
-  * search input box in the navbar to easy search users
-  * shows all users that include the search query.
+  * search input box on its own template, from the navbar
+  * shows all users that include the search query.  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/search.png)
 * Upload
-  * From navbar users can upload a post/image that uploads in the feed (and profile page)
+  * From navbar users can upload a post/image that uploads in the feed (and profile page)  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/upload.png)
 * post detail
   * When user want to comment or like, you have to click on the post to get more details and show comments.
-  * From post detail you can edit or delete your own posts and delete comments that user have made.
+  * From post detail you can edit or delete your own posts and delete comments that user have made.  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/post%20detail.png)
 * Footer
-  * contains links to site owners social media
+  * contains links to site owners social media  
+  ![](https://github.com/StinaAxelsson/portfolio-project-4/blob/main/media/imagesReadme/footer.png)
 ## Design Choises
 ### Fonts
 I have two main fonts from Google Fonts. 
